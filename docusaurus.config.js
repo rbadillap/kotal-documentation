@@ -1,6 +1,6 @@
 module.exports = {
   title: 'Kotal',
-  tagline: 'Blockchain Operator',
+  tagline: 'Decentralized Blockchain Operator',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
@@ -85,7 +85,7 @@ module.exports = {
       {
         docs: {
           // It is recommended to set document id as docs home page (`docs/` path).
-          homePageId: 'doc1',
+          homePageId: 'kotal',
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
