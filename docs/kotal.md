@@ -1,9 +1,9 @@
 ---
 id: kotal
-title: Kotal Blockchain Operator
+title: Kotal
+sidebar_label: Introduction
 ---
 
-## What's Kotal 
 Kotal is blockchain protcol agnostic and cloud agnostic network deployer that make it easy to deploy any blockchain infrastructure on any cloud.
 
 ## What I can do with Kotal ?
