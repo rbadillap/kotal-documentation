@@ -2,6 +2,8 @@
 title: Join Rinkeby
 ---
 
+Rinkeby is a Proof of Auhtority public Ethereum multi-client test network Typically used by developers to test their decentralized applications.
+
 ```yaml {7}
 # rinkeby.yaml
 apiVersion: ethereum.kotal.io/v1alpha1
