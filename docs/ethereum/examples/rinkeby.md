@@ -2,7 +2,7 @@
 title: Join Rinkeby
 ---
 
-Rinkeby is a Proof of Auhtority public Ethereum multi-client test network Typically used by developers to test their decentralized applications.
+Rinkeby is a Proof of Auhtority public Ethereum test network Typically used by developers to test their decentralized applications.
 
 ```yaml {7}
 # rinkeby.yaml
