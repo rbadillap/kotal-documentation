@@ -2,3 +2,168 @@
 title: Node
 ---
 
+At least one node is required in a network. A node is Ethereum client (geth or besu) running inside a pod with compute and storage resources and scheduled in a kubernetes node.
+
+| Syntax      | Type |  Description | Default |
+| ----------- |------| ----------- | ----- |
+| [bootnode](#bootnode) | boolean | node is bootnode | `false` |
+| [client](#client) | string | ethereum client powering the node | `besu` |
+| [coinbase](#coinbase) | string | ethereum account to which mining rewards are paid | |
+| [corsDomains](#corsdomains) | array | domains from which to accept cross origin requests (browser enforced) | `*` |
+| [graphql](#graphql) | boolean | enable GraphQL server | `false` |
+| [graphqlPort](#graphqlport) | number | GraphQL server listening port | `8547` |
+| [graphqlHost](#graphqlhost) | string | GraphQL server host address | `0.0.0.0` |
+| [hosts](#hosts) | array | hostnames to whitelist for RPC access (server enforced) | `*` |
+| [import](#import) | object | ethereum accoun to import for `geth` node | |
+| [miner](#miner) | boolean | node is mining or signing blocks ? | false |
+| [name](#name) | string | node name | |
+| [nodekey](#nodekey) | string | node private key | |
+| [p2pPort](#p2pport) | string | node p2p port | `30303` |
+| [rpc](#rpc) | boolean | enable HTTP RPC server | `false` |
+| [rpcHost](#rpchost) | string | HTTP RPC server host address | `0.0.0.0` |
+| [rpcPort](#rpcport) | number | HTTP RPC server listening port | `8545` |
+| [rpcAPI](#rpcapi) | array | services to enable | `web3`, `eth`, and `net` |
+| [syncMode](#syncmode) | string | blockchain synchronization mode | `fast` in public, `full` in private |
+| [ws](#ws) | boolean | enable web socket server | `false` |
+| [wsHost](#wshost) | string | web socket server host address | `0.0.0.0` |
+| [wsPort](#wsport) | number | web socket server listening port | `8546` |
+| [wsAPI](#wsapi) | array | services to enable | `web3`, `eth`, and `net` |
+
+
+## bootnode
+
+`bootnode` marks the node as bootnode.
+
+First node in the `spec.nodes` list must be a bootnode with `bootnode: true`
+
+Bootnodes must use node private key, check [nodekey](#nodekey).
+
+## client
+
+`client` is the Ethereum client name powering the node.
+
+`client` possible values are `besu` and `geth`.
+
+`client: geth` can't be used if network consensus is `ibft2`.
+
+`client: geth` can't be used in fixed difficulty proof of work networks, where `spec.consensus` is `pow` and `spec.genesis.ethash.fixedDifficulty` is not null.
+
+## coinbase 
+
+`coinbase` is ethereum account to which mining rewards are paid.
+
+`coinbase` is required if node is mining `miner: true`.
+
+
+## corsDomains
+
+`corsDomains` is a list of domains from which to accept cross origin requests (browser enforced).
+
+Default value `*` will be used if HTTP RPC server is enabled `rpc: true` or web socket server is enabled `ws: true` or graphQL server is enabled `graphql: true`.
+
+## graphql
+
+`graphql` enables GraphQL server.
+
+## graphqlPort
+
+`graphqlPort` GraphQL server listening port.
+
+Default value `8547` will be used if graphQL server is enabled `graphql: true`.
+
+## graphqlHost 
+
+`graphqlHost` is GraphQL server host address.
+
+Default value `0.0.0.0` will be used if graphQL server is enabled `graphql: true`.
+
+## hosts
+
+`hosts` is a list of host names to whitelist for RPC access (server enforced).
+
+## import
+
+`import` is the ethereum account to import. Only for `geth` nodes.
+
+During account creation, it will be encrypted with the password, and during import it will be unlocked using same password.
+
+:snake: Nodes that import accounts can't enable HTTP RPC server, web socket server, or GraphQL server to prevent funds drainage if exposed to the internet.
+
+Account must be imported if node with `client: geth` wants to be a signer in proof of authority clique network.
+
+| Syntax      | Type |  Description |
+| ----------- |------| ----------- |
+| privatekey | string | account private key in hexadecimal |
+| password | string | encryption secret |
+
+## miner
+
+`miner` enables node mining or signing blocks.
+
+## name
+
+`name` is the node name.
+
+`name` is required.
+
+## nodekey
+
+`nodekey` is the node private key.
+
+`nodekey` is required if node is a bootnode `bootnode: true`, or if besu node with `client: geth` is a signer in proof of authority clique network or validator in ibft2 network.
+
+## p2pPort
+
+`p2pPort` is node p2p port for communicaiton (TCP) and discovery (UDP).
+
+## rpc
+
+`rpc` enables HTTP RPC server.
+
+## rpcHost
+
+`rpcHost` is HTTP RPC server host address.
+
+Default value `0.0.0.0` will be used if rpc is enabled.
+
+## rpcPort
+
+`rpcPort` is HTTP RPC server listening port.
+
+Default value `8545` will be used if HTTP RPC server is enabled with `rpc: true`.
+
+## rpcAPI
+
+`rpcAPI` is list of RPC services to enable.
+
+Default value `["web3", "eth", "net]` will be used if HTTP RPC server is enabeld with `rpc: true`.
+
+## syncMode
+
+`syncMode` is Blockchain synchronization mode.
+
+`syncMode` possible values are `light`, `full` or `fast`.
+
+:snake: Nodes that run with `client: besu` doesn't support `light` sync mode.
+
+## ws
+
+`ws` enables web socket server.
+
+## wsHost
+
+`wsHost` is web socket server host address.
+
+Default value `0.0.0.0` is used if web socket server is enabled with `ws: true`.
+
+## wsPort
+
+`wsPort` is web socket server listening port.
+
+Default value `8546` is used if web socket server is enabled with `ws: true`.
+
+## wsAPI
+
+`wsAPI` is list of rpc services to enable.
+
+Default value `["web3", "eth", "net]` will be used if web socket server is enabeld with `ws: true`.
