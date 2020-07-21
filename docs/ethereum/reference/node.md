@@ -29,7 +29,6 @@ At least one node is required in a network. A node is Ethereum client (geth or b
 | [wsPort](#wsport) | number | web socket server listening port | `8546` |
 | [wsAPI](#wsapi) | array | services to enable | `web3`, `eth`, and `net` |
 
-
 ## bootnode
 
 `bootnode` marks the node as bootnode.

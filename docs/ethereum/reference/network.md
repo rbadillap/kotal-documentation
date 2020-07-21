@@ -15,14 +15,15 @@ spec: # network spec
 
 ## Network Spec
 
-| Syntax      | Type |  Description |
-| ----------- |------| ----------- |
-| [id](#id)      | number | Network id used for p2p communcations between network nodes|
-| [join](#join)   | string | Public network name to join, like `mainnet`, `rinkeby`, and `goerli` |
-| [consensus](#consensus) | string | Network consensus algorithm name, like `poa`, `pow`, and `ibft2`|
-| [highlyAvailable](#highly-available) | boolean | Ethereum nodes will be scheduled on different kubernetes nodes |
-| [genesis](#genesis)   | object | Genesis block configuration |
-| [nodes](#nodes) | array | Array of node objects |
+| Syntax      | Type |  Description | Default |
+| ----------- |------| ----------- | ----- |
+| [id](#id)      | number | Network id used for p2p communcations between network nodes| |
+| [join](#join)   | string | Public network name to join, like `mainnet`, `rinkeby`, and `goerli` | |
+| [consensus](#consensus) | string | Network consensus algorithm name, like `poa`, `pow`, and `ibft2`| |
+| [highlyAvailable](#highly-available) | boolean | Ethereum nodes will be scheduled on different kubernetes nodes | `false` |
+| [topologyKey](#topology-key) | string | kubernetes node label key used to distribute ethereum nodes | `topology.kubernetes.io/zone` |
+| [genesis](#genesis)   | object | Genesis block configuration | |
+| [nodes](#nodes) | array | Array of node objects | |
 
 here's an example of a `Network` in `ethereum.kotal.io/v1alpha1` group:
 
@@ -42,8 +43,6 @@ spec:
 
 `id` is the network id used for p2p communcations between network nodes in private network.
 
-`id` has no default value.
-
 `id` is required in private networks.
 
 `id` can't be provided while joining a public network.
@@ -53,15 +52,11 @@ spec:
 
 `join` is the public network name to join, like `rinkeby`.
 
-`join` has no default value.
-
 `join` can't be provided in private networks.
 
 ## consensus
 
 `consensus` is the network consensus algorithm name, like `ibft2`.
-
-`consensus` has no defult value.
 
 `consensus` is required in private networks.
 
@@ -71,7 +66,9 @@ spec:
 
 `highlyAvailable` controls if Ethereum nodes will be scheduled on different kubernetes nodes.
 
-`highlyAvailable` default value is false.
+## topology key
+
+`topologyKey` is kubernetes node label key used to distribute ethereum nodes pods on different kubernetes nodes.
 
 ## genesis
 
