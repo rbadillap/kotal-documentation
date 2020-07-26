@@ -8,12 +8,12 @@ Genesis block configuration `genesis` is required in private networks.
 | ----------- |------| ----------- | ------ |
 | [chainId](#chainid)   | number | used in transaction signature to prevent transactions reply [eip155](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-155.md) | |
 | [coinbase](#coinbase) | string | benefeciary (ethereum address) of mining reward | `address(0`)|
-| [difficulty](#difficulty)| string | difficulty (hexadecimal number) of the genesis block | `0x0` |
+| [difficulty](#difficulty)| string | difficulty (hexadecimal number) of the genesis block | `0x1` |
 | [mixHash](#mixhash)| string | hash (hexadecimal) combined with nonce to prove effort spent to create block | `0x00..00` |
-| [gasLimit](#gaslimit)| string | total gas limit (hexadecimal number) for all transactions in a block | `0x0` |
+| [gasLimit](#gaslimit)| string | total gas limit (hexadecimal number) for all transactions in a block | `0x47b760` |
 | [nonce](#nonce)| string | random hexadecimal number used in block computation | `0x0` |
 | [timestamp](#timestamp)| string | genesis block creation date (hexadecimal) | `0x0` |
-| [accounts](#accounts)      | Array | array of accounts to prefund and store code | `0x0` |
+| [accounts](#accounts)      | Array | array of accounts to prefund and store code | |
 | [forks](#forks)|  object | supported forks and corresponding block number| |
 | [ethash](#ethash)| object | Proof of Work consensus configuration | |
 | [clique](#clique)| object | Proof of Authority consensus configuration | |
