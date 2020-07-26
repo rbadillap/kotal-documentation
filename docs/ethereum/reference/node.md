@@ -19,6 +19,7 @@ At least one node is required in a network. A node is Ethereum client (geth or b
 | [name](#name) | string | node name | |
 | [nodekey](#nodekey) | string | node private key | |
 | [p2pPort](#p2pport) | string | node p2p port | `30303` |
+| [resources](#resources) | object | node compute and storage resources to alloacte  | |
 | [rpc](#rpc) | boolean | enable HTTP RPC server | `false` |
 | [rpcHost](#rpchost) | string | HTTP RPC server host address | `0.0.0.0` |
 | [rpcPort](#rpcport) | number | HTTP RPC server listening port | `8545` |
@@ -114,6 +115,28 @@ Account must be imported if node with `client: geth` wants to be a signer in pro
 ## p2pPort
 
 `p2pPort` is node p2p port for communicaiton (TCP) and discovery (UDP).
+
+## resources
+
+`resources` allocates compute and storage resources to the node.
+
+| Syntax      | Type |  Description | Defalt |
+| ----------- |------| ----------- | ---- |
+| cpu | string | number of cpu cores this node requires | `2` in private, `4` in public |
+| cpuLimit | string | number of cpu cores this node is limited to | `3` in private, `6` in public |
+| memory | string | memory this node requires | `4Gi` in private, `8Gi` in public |
+| memoryLimit | string | memory this node is limited to | `8Gi` in private, `16Gi` in public |
+| storage | string | disk space this node requires | `100Gi` in private, `6Ti` in mainnet with full sync, `750Gi` in mainnet wit fast sync, `25Gi` in public test networks |
+
+memory and storage requests and limits must have use the pattern `^[1-9][0-9]*[KMGTPE]i$` for example `1500Mi`, `30Gi`, and `1Ti`.
+
+cpu requests and limits must have use the pattern `^[1-9][0-9]*m?$` for example `1000m` (which is equal to `1`), `1500m`, `2`, and `4.`
+
+`cpuLimit` can't be less that `cpu`.
+
+`memoryLimit` can't be less that `memory`.
+
+kotal uses default storage class for all volumes, this will change in future releases.
 
 ## rpc
 
