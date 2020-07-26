@@ -47,12 +47,15 @@ spec:
 
 `id` can't be provided while joining a public network.
 
+`id` can't be updated (immutable).
 
 ## join
 
 `join` is the public network name to join, like `rinkeby`.
 
 `join` can't be provided in private networks.
+
+`join` can't be updated (immutable).
 
 ## consensus
 
@@ -61,6 +64,8 @@ spec:
 `consensus` is required in private networks.
 
 `consensus` possible values are `pow`, `pow` or `ibft2`.
+
+`consensus` can't be updated (immutable).
 
 ## highly available
 
@@ -75,6 +80,8 @@ spec:
 `genesis` is the genesis block configuration.
 
 `genesis` block is required in private networks.
+
+`genesis` can't be updated (immutable).
 
 For extensive details, check [genesis](genesis) reference.
 

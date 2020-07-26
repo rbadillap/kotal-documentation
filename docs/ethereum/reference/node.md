@@ -106,6 +106,9 @@ Account must be imported if node with `client: geth` wants to be a signer in pro
 
 `name` is required.
 
+`name` can't be updated (immutable).
+
+
 ## nodekey
 
 `nodekey` is the node private key.
