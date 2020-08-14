@@ -16,8 +16,6 @@ module.exports = {
             'ethereum/examples/ibft2',
           ]
         },
-        'ethereum/defaulting',
-        'ethereum/validation',
         {Reference: 
           [
             'ethereum/reference/network',
