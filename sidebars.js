@@ -26,6 +26,11 @@ module.exports = {
           ]
         },
       ]
+    },
+    {
+      IPFS: [
+        'ipfs/intro',
+      ],
     }
   ]
 };
