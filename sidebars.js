@@ -28,6 +28,11 @@ module.exports = {
     {
       IPFS: [
         'ipfs/intro',
+        {Examples: 
+          [
+            'ipfs/examples/swarm'
+          ]
+        }
       ],
     }
   ]

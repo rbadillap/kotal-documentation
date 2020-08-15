@@ -2,7 +2,8 @@
 title: Introduction
 ---
 
-Kotal extended Kubernetes with `Swarm` custom resource in the `ipfs.kotal.io/v1alpha1` group version.
+Kotal extended Kubernetes with `Swarm` custom resource in the `ipfs.kotal.io/v1alpha1` group version which can be used to create IPFS swarm of nodes simply be deploying a swarm description manifest.
+
 Kotal swarm controller is watching for any new swarm or updating existing swarms to do its magic.
 Here's an example of IPFS swarm of 1 node:
 
