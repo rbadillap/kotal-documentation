@@ -32,6 +32,12 @@ module.exports = {
           [
             'ipfs/examples/swarm'
           ]
+        },
+        {Reference: 
+          [
+            'ipfs/reference/swarm',
+            'ipfs/reference/node',
+          ]
         }
       ],
     }
