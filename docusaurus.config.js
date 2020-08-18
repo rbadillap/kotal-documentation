@@ -1,17 +1,17 @@
 module.exports = {
   title: 'Kotal',
   tagline: 'Decentralized Blockchain Operator',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'kotal.co',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'kotal',
+  projectName: 'Kotal',
   themeConfig: {
     disableDarkMode: true,
     navbar: {
       title: 'Kotal',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'Kotal',
         src: 'img/logo.svg',
       },
       links: [
@@ -22,55 +22,24 @@ module.exports = {
           position: 'left',
         },
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://twitter.com/kotalco',
+          label: 'Twitter',
+          position: 'right',
+        },
+        {
+          href: 'https://discord.gg/kTxy4SA',
+          label: 'Discord',
+          position: 'right',
+        },
+        {
+          href: 'https://github.com/kotalco/kotal',
           label: 'GitHub',
           position: 'right',
         },
       ],
     },
     footer: {
-      style: 'dark',
-      links: [
-        {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Style Guide',
-              to: 'docs/',
-            },
-            {
-              label: 'Second Doc',
-              to: 'docs/doc2/',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
-            },
-          ],
-        },
-      ],
+      style: 'light',
       copyright: `Copyright © ${new Date().getFullYear()} Kotal.`,
     },
   },
