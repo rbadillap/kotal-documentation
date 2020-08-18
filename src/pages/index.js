@@ -8,32 +8,29 @@ import styles from './styles.module.css';
 
 const features = [
   {
-    title: <>Easy to Use</>,
-    imageUrl: 'img/undraw_docusaurus_mountain.svg',
+    title: <>Cloud Native</>,
+    imageUrl: 'img/cloud_native.svg',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Kotal is built from the ground up using cloud native technologies to make it run on all clouds out of the box.
       </>
     ),
   },
   {
-    title: <>Focus on What Matters</>,
-    imageUrl: 'img/undraw_docusaurus_tree.svg',
+    title: <>Protocol Agnostic</>,
+    imageUrl: 'img/protocol_agnostic.svg',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+      Kotal supports both Ethereum and IPFS and will continue to support other Blockchain protcols like Ethereum 2 and Filecoin.
       </>
     ),
   },
   {
-    title: <>Powered by React</>,
-    imageUrl: 'img/undraw_docusaurus_react.svg',
+    title: <>Multi Client</>,
+    imageUrl: 'img/multi_client.svg',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Kotal starts with protocol reference clients and continue to support other clients to make it easy for Blockchain operators to run multi-client Blockchain infrastructure.
       </>
     ),
   },

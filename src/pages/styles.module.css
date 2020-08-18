@@ -5,6 +5,10 @@
  * and scoped locally.
  */
 
+ h1, h2 {
+   font-family: 'Nunito', sans-serif;
+ }
+
 .heroBanner {
   padding: 4rem 0;
   text-align: center;
@@ -33,5 +37,5 @@
 
 .featureImage {
   height: 200px;
-  width: 200px;
+  width: 300px;
 }

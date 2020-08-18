@@ -43,6 +43,9 @@ module.exports = {
       copyright: `Copyright © ${new Date().getFullYear()} Kotal.`,
     },
   },
+  stylesheets: [
+    "https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,700&display=swap",
+  ],
   presets: [
     [
       '@docusaurus/preset-classic',
