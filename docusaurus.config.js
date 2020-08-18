@@ -1,7 +1,7 @@
 module.exports = {
   title: 'Kotal',
   tagline: 'Decentralized Blockchain Operator',
-  url: 'kotal.co',
+  url: 'https://kotal.co',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
   organizationName: 'kotal',
