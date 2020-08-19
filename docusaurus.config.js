@@ -22,6 +22,11 @@ module.exports = {
           position: 'left',
         },
         {
+          label: '❤️ Support',
+          to: 'https://gitcoin.co/grants/1070/kotal-multi-client-cloud-agnostic-blockchain-infra',
+          position: 'left',
+        },
+        {
           href: 'https://twitter.com/kotalco',
           label: 'Twitter',
           position: 'right',
