@@ -57,7 +57,7 @@ function Home() {
   return (
     <Layout
       title={siteConfig.tagline}
-      description={siteConfig.title}>
+      description="Opensource multi-client cloud-agnostic blockchain infrastructure deployer that makes it easy to deploy highly available, self-managing, self-healing Blockchain infrastructure like networks, nodes, beacon nodes, validator nodes on any cloud.">
       <header className={clsx('hero', styles.heroBanner)}>
         <div className="container">
           <h1 className="hero__title">{siteConfig.title}</h1>
