@@ -8,7 +8,7 @@ module.exports = {
   projectName: 'Kotal',
   themeConfig: {
     disableDarkMode: true,
-    image: 'img/cloud_native.svg',
+    image: 'img/cloud_native.png',
     navbar: {
       title: 'Kotal',
       logo: {
