@@ -40,7 +40,7 @@ Genesis block configuration `genesis` is required in private networks.
 
 ## coinbase
 
-`coinbase` is the benefeciary (ethereum address) of mining reward.
+`coinbase` is the beneficiary (ethereum address) of mining reward.
 
 `coinbase` is optional.
 
@@ -52,7 +52,7 @@ Genesis block configuration `genesis` is required in private networks.
 
 ## mixHash
 
-`mixHash` is combined with nonce to prove effort spent to create block.
+`mixHash` is combined with the nonce to prove the effort spent to create a block.
 
 `mixHash` is optional.
 
@@ -64,7 +64,7 @@ Genesis block configuration `genesis` is required in private networks.
 
 ## nonce
 
-`nonce` is random number used in block computation.
+`nonce` is a random number used in block computation.
 
 `nonce` is optional.
 
@@ -76,7 +76,7 @@ Genesis block configuration `genesis` is required in private networks.
 
 ## forks
 
-`forks` is an object, where key is fork name and value is the block number at which to activate this fork.
+`forks` is an object, where the key is fork name and the value is the block number at which to activate this fork.
 
 `forks` is optional.
 
@@ -100,7 +100,7 @@ Later forks like `muirglacier` can't be activated before earlier forks like `hom
 
 ## accounts
 
-`accounts` is array of accounts to prefund or store code.
+`accounts` is an array of accounts to fund or store code.
 
 `accounts` is optional.
 
@@ -113,7 +113,7 @@ a single account has no defaults.
 | address | string | ethereum address |
 | balance | string | account balance in hexadecimal |
 | code | string | bytecode in hexadecimal |
-| storage | map | key is the storage location in hexadecimal, value in hexadecimal is the storage value |
+| storage | map | key is the storage location in hexadecimal, and value in hexadecimal is the storage value |
 
 ## ethash
 
@@ -135,7 +135,7 @@ a single account has no defaults.
 
 `clique` is optional.
 
-`clique` can be set only in proof of authority clieque private networks.
+`clique` can be set only in proof of authority clique private networks.
 
 At least one signer in `clique.signers` is required.
 

@@ -3,7 +3,7 @@ title: Introduction
 ---
 
 Kotal extended Kubernetes with `Network` custom resource in the `ethereum.kotal.io/v1alpha1` group version.
-Kotal network controller is watching for any new network deployments or updating existing network to do its magic.
+Kotal network controller is watching for any new network deployments or updating an existing network to do its magic.
 Here's an example of Ethereum network of 1 node joining rinkeby testnet:
 
 ```yaml {1-2}

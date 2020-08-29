@@ -2,7 +2,7 @@
 title: Join Rinkeby
 ---
 
-Rinkeby is a Proof of Auhtority public Ethereum test network Typically used by developers to test their decentralized applications.
+Rinkeby is a Proof of Authority public Ethereum test network Typically used by developers to test their decentralized applications.
 
 ```yaml {7}
 # rinkeby.yaml
@@ -17,7 +17,7 @@ spec:
       client: geth
 ```
 
-Using kotal you can join Rinkeby test network simply by deploying this network mainfest.
+Using kotal you can join Rinkeby test network simply by deploying this network manifest.
 
 ```bash
 $ kubectl apply -f rinkeby.yaml
@@ -37,7 +37,7 @@ network-sample    rinkeby   1
 Lets add 3 more nodes -It's free :smile:- 2 of them running Hyperledger Besu.
 
 :::info
-keep in mind that in multiple nodes network, thet first node must be a bootnode by setting `bootnode: true` and adding a `nodekey`.
+keep in mind that in multiple nodes network, the first node must be a boot node by setting `bootnode: true` and adding a `nodekey`.
 :::
 
 ```yaml {13-18}
@@ -70,7 +70,7 @@ NAME              JOIN      NODES
 network-sample    rinkeby   4
 ```
 
-let's update node-2 by enabling HTTP RPC server and enabling only net RPC API.
+let's update node-2 by enabling the HTTP RPC server and enabling only `net` RPC API.
 
 ```yaml {15-17}
 # rinkeby.yaml
@@ -128,4 +128,4 @@ Finally you can delete the network and all its resources by
 kubectl delete -f rinkeby.yaml
 ```
 
-and kubernetes garbage collector will delete all resources created by the controller.
+and Kubernetes garbage collector will delete all resources created by the controller.

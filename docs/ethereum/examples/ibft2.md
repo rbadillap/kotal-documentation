@@ -54,7 +54,7 @@ spec:
     - name: node-5
 ```
 
-In the example network above, we created ibft2 network as indicated by `consensus: ibft2`. The most important setting in ibft2 network gensis is `validators`, we set the accounts `0xd2...06`, `0x42...44` and `0x8e...2b` as the initial block validators. We set the network id and chain id to `55555`, and prefunded the account `0x48c5F25a884116d58A6287B72C9b069F936C9489` with 100,000 eth :moneybag:
+In the example network above, we created an ibft2 network as indicated by `consensus: ibft2`. The most important setting in ibft2 network genesis is `validators`, we set the accounts `0xd2...06`, `0x42...44` and `0x8e...2b` as the initial block validators. We set the network id and chain id to `55555`, and funded the account `0x48c5F25a884116d58A6287B72C9b069F936C9489` with 100,000 eth :moneybag:
 
 :::info **How node becomes a validator** :pencil2:
 Hyperledger besu nodes that use one of the validators accounts' private key as nodekey becomes a validator node.
@@ -67,14 +67,14 @@ ibft2 network will be dysfunctional and blocks will not be generated if
 :::
 
 :::note **pre-funded accounts are important in ibft2 networks**
-Block validators are not rewarded by eth in ibft2 networks, so the only source of eth in a private ibft2 network is prefunded accounts.
+Block validators are not rewarded by eth in ibft2 networks, so the only source of eth in a private ibft2 network is genesis block funded accounts.
 :::
 
 Note that we've left most of the genesis block config parameters like `coinbase`, `nonce`, `difficulty` ... etc. 
 
-Kotal will default all these missing fields like setting coinbase to `0x00...00`, nonce to `0x0` and difficulty to `0x0` ... etc. So you can set only parameters that are specific to your network like `chainId` and prefunded `accounts` in the example above. For more information on defaulting, check the [Defaulting](../defaulting) guide.
+Kotal will default all these missing fields like setting coinbase to `0x00...00`, nonce to `0x0` and difficulty to `0x0` ... etc. So you can set only parameters that are specific to your network like `chainId` and funded `accounts` in the example above.
 
-Deploy this network mainfest and this 5 nodes ibft2 network will be deployed.
+Deploy this network manifest and this 5 nodes ibft2 network will be deployed.
 
 ```bash
 $ kubectl apply -f ibft2.yaml

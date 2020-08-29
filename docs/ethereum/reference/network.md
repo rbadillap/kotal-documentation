@@ -4,7 +4,7 @@ title: Network
 
 Kotal extended Kubernetes with `Network` custom resource in the `ethereum.kotal.io/v1alpha1` group version.
 
-Network is a kubernetes object that has a similar structure to resources you're familiar with like pod and deployment.
+Network is a Kubernetes object that has a similar structure to resources you're familiar with like pod and deployment.
 
 ```yaml
 apiVersion: ethereum.kotal.io/v1alpha1
@@ -41,7 +41,7 @@ spec:
 
 ## id
 
-`id` is the network id used for p2p communcations between network nodes in private network.
+`id` is the network id used for p2p communications between network nodes in private networks.
 
 `id` is required in private networks.
 
@@ -69,11 +69,11 @@ spec:
 
 ## highly available
 
-`highlyAvailable` controls if Ethereum nodes will be scheduled on different kubernetes nodes.
+`highlyAvailable` controls if Ethereum nodes will be scheduled on different Kubernetes nodes.
 
 ## topology key
 
-`topologyKey` is kubernetes node label key used to distribute ethereum nodes pods on different kubernetes nodes.
+`topologyKey` is Kubernetes node label key used to distribute ethereum nodes pods on different kubernetes nodes.
 
 ## genesis
 

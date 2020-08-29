@@ -38,7 +38,7 @@ network-sample    goerli   1
 Lets add 2 more besu nodes
 
 :::info
-keep in mind that in multiple nodes network, thet first node must be a bootnode by setting `bootnode: true` and adding a `nodekey`.
+keep in mind that in multiple nodes network, the first node must be a boot node by setting `bootnode: true` and adding a `nodekey`.
 :::
 
 ```yaml {13-18}
@@ -69,7 +69,7 @@ NAME              JOIN      NODES
 network-sample    goerli   3
 ```
 
-let's update node-2 by enabling HTTP RPC server and enabling only net RPC API.
+let's update node-2 by enabling the HTTP RPC server and enabling only net RPC API.
 
 ```yaml {15-17}
 # goerli.yaml
@@ -125,4 +125,4 @@ Finally you can delete the network and all its resources by
 kubectl delete -f goerli.yaml
 ```
 
-and kubernetes garbage collector will delete all resources created by the controller.
+and Kubernetes garbage collector will delete all resources created by the controller.

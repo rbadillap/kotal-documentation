@@ -21,7 +21,7 @@ const features = [
     imageUrl: 'img/protocol_agnostic.svg',
     description: (
       <>
-      Kotal supports both Ethereum and IPFS and will continue to support other Blockchain protcols like Ethereum 2 and Filecoin.
+      Kotal supports both Ethereum and IPFS and will continue to support other Blockchain protocols like Ethereum 2.0 and Filecoin.
       </>
     ),
   },
@@ -30,7 +30,7 @@ const features = [
     imageUrl: 'img/multi_client.svg',
     description: (
       <>
-        Kotal starts with protocol reference clients and continue to support other clients to make it easy for Blockchain operators to run multi-client Blockchain infrastructure.
+        Kotal starts with protocol reference clients and continue to support other clients to make it easy for Blockchain node operators to run multi-client Blockchain infrastructure.
       </>
     ),
   },

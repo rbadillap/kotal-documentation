@@ -34,11 +34,11 @@ spec:
 
 Note that we've left most of the genesis block config parameters like `coinbase`, `nonce`, `difficulty` ... etc. 
 
-Kotal will default all these missing fields like setting coinbase to `0x00...00`, nonce to `0x0` and difficulty to `0x0` ... etc. So you can set only parameters that are specific to your network like `chainId` and prefunded `accounts` in the example above. For more information on defaulting, check the [Defaulting](../defaulting) guide.
+Kotal will default all these missing fields like setting coinbase to `0x00...00`, nonce to `0x0` and difficulty to `0x0` ... etc. So you can set only parameters that are specific to your network like `chainId` and funded `accounts` in the example above.
 
-In the example network above, we created a proof of work network as indicated by `consensus: pow`, we set the network id to 9999 as indicated by `id: 9999`, we also set genesis chain id to 9999 as indicated by `chainId: 9999` and prefunding the account `0x48c5F25a884116d58A6287B72C9b069F936C9489` with 100,000 eth :moneybag:
+In the example network above, we created a proof of work network as indicated by `consensus: pow`, we set the network id to 9999 as indicated by `id: 9999`, we also set genesis chain id to 9999 as indicated by `chainId: 9999` and funding the account `0x48c5F25a884116d58A6287B72C9b069F936C9489` with 100,000 eth :moneybag:
 
-Deploy this network mainfest and this single node miner will be deployed.
+Deploy this network manifest and this single node miner will be deployed.
 
 ```bash
 $ kubectl apply -f mainnet.yaml
@@ -56,7 +56,7 @@ pow-network       pow            1
 Let's update our pow network by adding another Go-Ethereum node.
 
 :::info
-keep in mind that in multiple nodes network, thet first node must be a bootnode by setting `bootnode: true` and adding a `nodekey`.
+keep in mind that in multiple nodes network, the first node must be a boot node by setting `bootnode: true` and adding a `nodekey`.
 :::
 
 ```yaml {20-24}
@@ -93,4 +93,4 @@ Finally you can delete the network and all its resources by
 $ kubectl delete -f pow.yaml
 ```
 
-and kubernetes garbage collector will delete all resources created by the controller :fire:
+and Kubernetes garbage collector will delete all resources created by the controller :fire:

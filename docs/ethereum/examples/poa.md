@@ -2,11 +2,11 @@
 title: Create private PoA Network
 ---
 
-Using Kotal, you can create private cross-client Proof of Auhtority (Clique) networks.
+Using Kotal, you can create private cross-client Proof of Authority (Clique) networks.
 
 ## Single signer network
 
-Here's an example of 2 nodes cross-client network, the first node `node-1` is signer.
+Here's an example of 2 nodes cross-client network, the first node `node-1` is a signer.
 
 ```yaml {7-8,11-18}
 # poa.yaml
@@ -37,7 +37,7 @@ spec:
       client: geth
 ```
 
-In the example network above, we created a proof of authority network as indicated by `consensus: poa`, The most important setting in proof of authority network gensis is `signers`, we set the account `0xd2c21213027cbf4d46c16b55fa98e5252b048706` as the only signer. We also set the network id and chain id to `4444` and prefunding the account `0x48c5F25a884116d58A6287B72C9b069F936C9489` with 100,000 eth :moneybag:
+In the example network above, we created a proof of authority network as indicated by `consensus: poa`, The most important setting in proof of authority network genesis is `signers`, we set the account `0xd2c21213027cbf4d46c16b55fa98e5252b048706` as the only signer. We also set the network id and chain id to `4444` and funding the account `0x48c5F25a884116d58A6287B72C9b069F936C9489` with 100,000 eth :moneybag:
 
 :::info **How node becomes a signer** :pencil2:
 Any node can be a signer by importing a private key that corresponds to an address in the genesis `signers` list.
@@ -45,18 +45,18 @@ Hyperledger Besu must use the private key as `nodekey` to be a signer.  Go-Ether
 :::
 
 :::caution **network with no signers or signer nodes** :fire:
-network will be dysfunctional and blocks will not be generated if
+The network will be dysfunctional and blocks will not be generated if
 * There's no `signers` in the `gensis.clique` setting
 * No signer account is imported in any node
 :::
 
 :::note **pre-funded accounts are important in PoA networks**
-Block signers are not rewarded by eth in PoA networks, so the only way source of eth in a private PoA network is prefunded accounts.
+Block signers are not rewarded by eth in PoA networks, so the only way source of eth in a private PoA network is genesis block funded accounts.
 :::
 
-Note that we've left most of the genesis block config parameters like `coinbase`, `nonce`, `difficulty` ... etc. Kotal will default all these missing fields like setting coinbase to `0x00...00`, nonce to `0x0` and difficulty to `0x0` ... etc. So you can set only parameters that are specific to your network like `genesis` and prefunded `accounts` in the example above. For more information on defaulting, check the [Defaulting](../defaulting) guide.
+Note that we've left most of the genesis block config parameters like `coinbase`, `nonce`, `difficulty` ... etc. Kotal will default all these missing fields like setting coinbase to `0x00...00`, nonce to `0x0` and difficulty to `0x0` ... etc. So you can set only parameters that are specific to your network like `genesis` and funded `accounts` in the example above.
 
-Deploy this network mainfest and 2 nodes will be deployed, using PoA clique consensus, the first node only is a signer, can produce and sign blocks, the second node is only syncing the blockchain and can submit and rely trasnactions.
+Deploy this network manifest and 2 nodes will be deployed, using PoA clique consensus, the first node only is a signer, can produce and sign blocks, the second node is only syncing the blockchain and can submit and rely transactions.
 
 ```bash
 $ kubectl apply -f poa.yaml
@@ -85,10 +85,10 @@ $ kubectl delete -f poa.yaml
 
 ## Multiple signers network
 
-Using kotal, you can create a multi signers cross-client network by creating a list of signers in the genesis block `clique.signers` setting.
+Using kotal, you can create multiple signers cross-client network by creating a list of signers in the genesis block `clique.signers` setting.
 
 :::note
-You can use the client clique API to add more signers after the gensis block is created using
+You can use the client clique API to add more signers after the genesis block is created using
 * Hyperledger Besu [Clique API](https://besu.hyperledger.org/en/stable/HowTo/Configure/Consensus-Protocols/Clique/#adding-and-removing-signers)
 * Go-Ethereum [Clique API](https://geth.ethereum.org/docs/rpc/ns-clique) 
 :::
@@ -128,7 +128,7 @@ spec:
         password: "secret"
 ```
 
-Deploy this network mainfest and 2 nodes will be deployed, both of them are producing and signing blocks in their turn.
+Deploy this network manifest and 2 nodes will be deployed, both of them are producing and signing blocks in their turn.
 
 ```bash
 $ kubectl apply -f poa.yaml
@@ -161,4 +161,4 @@ Let's delete the network before starting our next example.
 $ kubectl delete -f poa.yaml
 ```
 
-and kubernetes garbage collector will delete all resources created by the controller :fire:
+and Kubernetes garbage collector will delete all resources created by the controller :fire:

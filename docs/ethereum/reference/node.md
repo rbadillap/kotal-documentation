@@ -2,7 +2,7 @@
 title: Node
 ---
 
-At least one node is required in a network. A node is Ethereum client (geth or besu) running inside a pod with compute and storage resources and scheduled in a kubernetes node.
+At least one node is required in a network. A node is Ethereum client (geth or besu) running inside a pod with compute and storage resources and scheduled in a Kubernetes node.
 
 | Syntax      | Type |  Description | Default |
 | ----------- |------| ----------- | ----- |
@@ -32,9 +32,9 @@ At least one node is required in a network. A node is Ethereum client (geth or b
 
 ## bootnode
 
-`bootnode` marks the node as bootnode.
+`bootnode` marks the node as a boot node.
 
-First node in the `spec.nodes` list must be a bootnode with `bootnode: true`
+The first node in the `spec.nodes` list must be a bootnode with `bootnode: true`
 
 Bootnodes must use node private key, check [nodekey](#nodekey).
 
@@ -52,28 +52,28 @@ Bootnodes must use node private key, check [nodekey](#nodekey).
 
 `coinbase` is ethereum account to which mining rewards are paid.
 
-`coinbase` is required if node is mining `miner: true`.
+`coinbase` is required if the node is mining `miner: true`.
 
 
 ## corsDomains
 
-`corsDomains` is a list of domains from which to accept cross origin requests (browser enforced).
+`corsDomains` is a list of domains from which to accept cross-origin requests (browser enforced).
 
 Default value `*` will be used if HTTP RPC server is enabled `rpc: true` or web socket server is enabled `ws: true` or graphQL server is enabled `graphql: true`.
 
 ## graphql
 
-`graphql` enables GraphQL server.
+`graphql` enables the GraphQL server.
 
 ## graphqlPort
 
 `graphqlPort` GraphQL server listening port.
 
-Default value `8547` will be used if graphQL server is enabled `graphql: true`.
+The default value `8547` will be used if the graphQL server is enabled `graphql: true`.
 
 ## graphqlHost 
 
-`graphqlHost` is GraphQL server host address.
+`graphqlHost` is the GraphQL server host address.
 
 Default value `0.0.0.0` will be used if graphQL server is enabled `graphql: true`.
 
@@ -85,11 +85,11 @@ Default value `0.0.0.0` will be used if graphQL server is enabled `graphql: true
 
 `import` is the ethereum account to import. Only for `geth` nodes.
 
-During account creation, it will be encrypted with the password, and during import it will be unlocked using same password.
+During account creation, it will be encrypted with the password, and during import it will be unlocked using the same password.
 
 :snake: Nodes that import accounts can't enable HTTP RPC server, web socket server, or GraphQL server to prevent funds drainage if exposed to the internet.
 
-Account must be imported if node with `client: geth` wants to be a signer in proof of authority clique network.
+Account must be imported if the node is running go-ethereum client with `client: geth` wants to be a signer in proof of authority clique network.
 
 | Syntax      | Type |  Description |
 | ----------- |------| ----------- |
@@ -113,17 +113,17 @@ Account must be imported if node with `client: geth` wants to be a signer in pro
 
 `nodekey` is the node private key.
 
-`nodekey` is required if node is a bootnode `bootnode: true`, or if besu node with `client: geth` is a signer in proof of authority clique network or validator in ibft2 network.
+`nodekey` is required if the node is a boot node `bootnode: true`, or if besu node with `client: geth` is a signer in proof of authority clique network or validator in ibft2 network.
 
 ## p2pPort
 
-`p2pPort` is node p2p port for communicaiton (TCP) and discovery (UDP).
+`p2pPort` is node p2p port for communication (TCP) and discovery (UDP).
 
 ## resources
 
 `resources` allocates compute and storage resources to the node.
 
-| Syntax      | Type |  Description | Defalt |
+| Syntax      | Type |  Description | Default |
 | ----------- |------| ----------- | ---- |
 | cpu | string | number of cpu cores this node requires | `2` in private, `4` in public |
 | cpuLimit | string | number of cpu cores this node is limited to | `3` in private, `6` in public |
@@ -143,23 +143,23 @@ kotal uses default storage class for all volumes, this will change in future rel
 
 ## rpc
 
-`rpc` enables HTTP RPC server.
+`rpc` enables the HTTP RPC server.
 
 ## rpcHost
 
-`rpcHost` is HTTP RPC server host address.
+`rpcHost` is the HTTP RPC server host address.
 
-Default value `0.0.0.0` will be used if rpc is enabled.
+The default value `0.0.0.0` will be used if the RPC server is enabled.
 
 ## rpcPort
 
-`rpcPort` is HTTP RPC server listening port.
+`rpcPort` is the HTTP RPC server listening port.
 
-Default value `8545` will be used if HTTP RPC server is enabled with `rpc: true`.
+Default value `8545` will be used if the HTTP RPC server is enabled with `rpc: true`.
 
 ## rpcAPI
 
-`rpcAPI` is list of RPC services to enable.
+`rpcAPI` is a list of RPC services to enable.
 
 Default value `["web3", "eth", "net]` will be used if HTTP RPC server is enabeld with `rpc: true`.
 
@@ -173,22 +173,22 @@ Default value `["web3", "eth", "net]` will be used if HTTP RPC server is enabeld
 
 ## ws
 
-`ws` enables web socket server.
+`ws` enables the web socket server.
 
 ## wsHost
 
-`wsHost` is web socket server host address.
+`wsHost` is the web socket server host address.
 
-Default value `0.0.0.0` is used if web socket server is enabled with `ws: true`.
+The default value `0.0.0.0` is used if the web socket server is enabled with `ws: true`.
 
 ## wsPort
 
-`wsPort` is web socket server listening port.
+`wsPort` is the web socket server listening port.
 
-Default value `8546` is used if web socket server is enabled with `ws: true`.
+The default value `8546` is used if the web socket server is enabled with `ws: true`.
 
 ## wsAPI
 
-`wsAPI` is list of rpc services to enable.
+`wsAPI` is a list of rpc services to enable.
 
-Default value `["web3", "eth", "net]` will be used if web socket server is enabeld with `ws: true`.
+the default value `["web3", "eth", "net]` will be used if the web socket server is enabeld with `ws: true`.

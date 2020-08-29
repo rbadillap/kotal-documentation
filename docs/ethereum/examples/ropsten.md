@@ -17,7 +17,7 @@ spec:
       client: geth
 ```
 
-Using kotal you can join Ropsten test network simply by deploying this network mainfest.
+Using kotal you can join Ropsten test network simply by deploying this network manifest.
 
 ```bash
 $ kubectl apply -f ropsten.yaml
@@ -37,7 +37,7 @@ network-sample    ropsten   1
 Lets add 1 more Hyperledger besu node, and enable GraphQL server on port 9999.
 
 :::info
-keep in mind that in multiple nodes network, thet first node must be a bootnode by setting `bootnode: true` and adding a `nodekey`.
+keep in mind that in multiple nodes network, the first node must be a boot node by setting `bootnode: true` and adding a `nodekey`.
 :::
 
 ```yaml {13-16}
@@ -68,7 +68,7 @@ NAME              JOIN      NODES
 network-sample    ropsten   2
 ```
 
-GraphQL server was enabled by `graphql: true` and listening port was changed by `graphqlPort: 9999`.
+GraphQL server was enabled by `graphql: true` and the listening port was changed by to `9999` by `graphqlPort: 9999`.
 
 Let's call node-2 GraphQL API, but first lets forward localhost:9999 calls to node-2 pod
 
@@ -100,4 +100,4 @@ Finally you can delete the network and all its resources by
 kubectl delete -f ropsten.yaml
 ```
 
-and kubernetes garbage collector will delete all resources created by the controller.
+and Kubernetes garbage collector will delete all resources created by the controller.

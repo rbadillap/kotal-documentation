@@ -14,7 +14,7 @@ For staging and production purposes you can use any public cloud kubernetes as a
 kind installation guide can be found [here](https://kind.sigs.k8s.io/docs/user/quick-start/).
 
 ### cert-manager 
-cert-manager is a native Kubernetes certificate management controller. It can help with issuing certificates from a variety of sources, such as [Let’s Encrypt](https://letsencrypt.org), [HashiCorp Vault](https://www.vaultproject.io/), a simple signing key pair, or self signed. It will ensure certificates are valid and up to date, and attempt to renew certificates at a configured time before expiry.
+cert-manager is a native Kubernetes certificate management controller. It can help with issuing certificates from a variety of sources, such as [Let’s Encrypt](https://letsencrypt.org), [HashiCorp Vault](https://www.vaultproject.io/), a simple signing key pair, or self-signed. It will ensure certificates are valid and up to date, and attempt to renew certificates at a configured time before expiry.
 
 Kotal **webhook** component uses cert-manager for issuing certificates to default and validate your networks and nodes.
 
@@ -29,7 +29,7 @@ This section is a work in progress.
 
 ## Deploy network
 
-Create `rinkeby.yaml` manifest that describes a single node wit rpc enabled that will join rinkeby test network.
+Create `rinkeby.yaml` manifest that describes a single node with rpc enabled that will join rinkeby test network.
 
 ```yaml
 apiVersion: ethereum.kotal.io/v1alpha1
