@@ -130,6 +130,7 @@ Account must be imported if the node is running go-ethereum client with `client:
 | memory | string | memory this node requires | `4Gi` in private, `8Gi` in public |
 | memoryLimit | string | memory this node is limited to | `8Gi` in private, `16Gi` in public |
 | storage | string | disk space this node requires | `100Gi` in private, `6Ti` in mainnet with full sync, `750Gi` in mainnet wit fast sync, `25Gi` in public test networks |
+| storageClass | string | Node volume storage class | Cluster's default storage class will be used as defined by cluster admin or cloud provider |
 
 memory and storage requests and limits must have use the pattern `^[1-9][0-9]*[KMGTPE]i$` for example `1500Mi`, `30Gi`, and `1Ti`.
 
@@ -138,8 +139,6 @@ cpu requests and limits must have use the pattern `^[1-9][0-9]*m?$` for example 
 `cpuLimit` can't be less that `cpu`.
 
 `memoryLimit` can't be less that `memory`.
-
-kotal uses default storage class for all volumes, this will change in future releases.
 
 ## rpc
 

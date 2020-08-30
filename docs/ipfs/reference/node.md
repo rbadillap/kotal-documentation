@@ -78,5 +78,3 @@ cpu requests and limits must have use the pattern `^[1-9][0-9]*m?$` for example 
 `cpuLimit` can't be less that `cpu`.
 
 `memoryLimit` can't be less that `memory`.
-
-kotal uses default storage class for all volumes, this will change in future releases.
