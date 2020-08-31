@@ -60,9 +60,8 @@ module.exports = {
           // It is recommended to set document id as docs home page (`docs/` path).
           homePageId: 'kotal',
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
+            'https://github.com/kotalco/kotal/tree/master',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
