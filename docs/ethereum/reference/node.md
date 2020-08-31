@@ -14,7 +14,8 @@ At least one node is required in a network. A node is Ethereum client (geth or b
 | [graphqlPort](#graphqlport) | number | GraphQL server listening port | `8547` |
 | [graphqlHost](#graphqlhost) | string | GraphQL server host address | `0.0.0.0` |
 | [hosts](#hosts) | array | hostnames to whitelist for RPC access (server enforced) | `*` |
-| [import](#import) | object | ethereum accoun to import for `geth` node | |
+| [import](#import) | object | ethereum account to import for `geth` node | |
+| [logging](#logging) | string | node logging verbosity level | `info` |
 | [miner](#miner) | boolean | node is mining or signing blocks ? | false |
 | [name](#name) | string | node name | |
 | [nodekey](#nodekey) | string | node private key | |
@@ -95,6 +96,13 @@ Account must be imported if the node is running go-ethereum client with `client:
 | ----------- |------| ----------- |
 | privatekey | string | account private key in hexadecimal |
 | password | string | encryption secret |
+
+## logging
+
+`logging` is Ethereum node logging verbosity level.
+
+`logging` possible values are `off`, `fatal`, `error`, `warn`, `debug`, `info`, `trace` and `all`.
+
 
 ## miner
 
