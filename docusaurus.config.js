@@ -61,7 +61,7 @@ module.exports = {
           homePageId: 'kotal',
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
-            'https://github.com/kotalco/kotal/tree/master',
+            'https://github.com/kotalco/kotal-documentation/tree/master',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
