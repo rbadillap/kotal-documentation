@@ -103,6 +103,18 @@ Account must be imported if the node is running go-ethereum client with `client:
 
 `logging` possible values are `off`, `fatal`, `error`, `warn`, `debug`, `info`, `trace` and `all`.
 
+Different clients support different logging vrbosity levels as shown in the following table:
+
+| Logging/Client      | Hyperledger Besu |  Go Ethereum | Parity (Open Ethereum) |
+| ----------- |------| ----------- | -------- |
+| `off` | :heavy_check_mark: | :heavy_check_mark: | :x: |
+| `fatal` | :heavy_check_mark: |  :x:  |   :x:    |
+| `error` | :heavy_check_mark: |  :heavy_check_mark:  |   :heavy_check_mark:    |
+| `warn` | :heavy_check_mark: |  :heavy_check_mark:  |   :heavy_check_mark:    |
+| `debug` | :heavy_check_mark: |  :heavy_check_mark:  |   :heavy_check_mark:    |
+| `info` | :heavy_check_mark: |  :heavy_check_mark:  |   :heavy_check_mark:    |
+| `trace` | :heavy_check_mark: | :x:   |   :heavy_check_mark:    |
+| `all` | :heavy_check_mark: |  :heavy_check_mark:  |    :x:   |
 
 ## miner
 
