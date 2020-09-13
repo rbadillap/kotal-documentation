@@ -71,6 +71,15 @@ function Home() {
               to={useBaseUrl('docs/')}>
               Get Started
             </Link>
+
+            <Link
+              className={clsx(
+                'button button--outline button--secondary button--lg',
+                styles.getStarted,
+              )}
+              to="https://calendly.com/kotal/30min">
+              Schedule a Call
+            </Link>
           </div>
         </div>
       </header>
