@@ -64,7 +64,8 @@ Default value `*` will be used if HTTP RPC server is enabled `rpc: true` or web 
 `graphql` enables the GraphQL server.
 
 :::note
-Parity (OpenEthereum) client doesn't support GraphQL.
+* Parity (OpenEthereum) client doesn't support GraphQL.
+* Geth (Go-Ethereum) GraphQL server can be used only if RPC is enabled as of geth [v1.9.19 release](https://github.com/ethereum/go-ethereum/releases/tag/v1.9.19)
 :::
 
 ## graphqlPort

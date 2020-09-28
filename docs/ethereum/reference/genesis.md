@@ -84,6 +84,10 @@ if `forks` is missing, all forks will be activated at block 0 (genesis block) ex
 
 Later forks like `muirglacier` can't be activated before earlier forks like `homestead`. They must be ordered as in the following table:
 
+:::note
+Note that `homestead` fork will be ignored in PoA Clique consensus network by Parity (OpenEthereum) client.
+:::
+
 | Syntax      | Type |  Description |
 | ----------- |------| ----------- |
 | homestead | number | [Homestead](https://blog.ethereum.org/2016/02/29/homestead-release/) fork activation block number |
