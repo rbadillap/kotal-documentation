@@ -4,7 +4,7 @@ title: Kotal
 sidebar_label: Introduction
 ---
 
-Kotal is a cloud-agnostic blockchain deployer that make it easy to deploy any blockchain infrastructure (networks, nodes, storage clusters ...) on any cloud.
+Kotal is a cloud-agnostic blockchain deployer that makes it easy to deploy any blockchain infrastructure (networks, nodes, storage clusters ...) on any cloud.
 
 ## What can I do with Kotal ?
 * Deploy highly available blockchain networks and nodes

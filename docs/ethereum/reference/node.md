@@ -2,7 +2,7 @@
 title: Node
 ---
 
-At least one node is required in a network. A node is Ethereum client (geth or besu) running inside a pod with compute and storage resources and scheduled in a Kubernetes node.
+At least one node is required in a network. A node is Ethereum client (geth, besu or parity) running inside a pod with compute and storage resources and scheduled in a Kubernetes node.
 
 | Syntax      | Type |  Description | Default |
 | ----------- |------| ----------- | ----- |
@@ -40,11 +40,11 @@ Bootnodes must use node private key, check [nodekey](#nodekey).
 
 `client` is the Ethereum client name powering the node.
 
-`client` possible values are `besu` and `geth`.
+`client` possible values are `besu`, `geth` or `parity`.
 
-`client: geth` can't be used if network consensus is `ibft2`.
+Client `geth` or `parity` can't be used if network consensus is `ibft2`.
 
-`client: geth` can't be used in fixed difficulty proof of work networks, where `spec.consensus` is `pow` and `spec.genesis.ethash.fixedDifficulty` is not null.
+Client `geth` or `parity` can't be used in fixed difficulty proof of work networks, where `spec.consensus` is `pow` and `spec.genesis.ethash.fixedDifficulty` is not null.
 
 ## coinbase 
 
@@ -63,6 +63,10 @@ Default value `*` will be used if HTTP RPC server is enabled `rpc: true` or web 
 
 `graphql` enables the GraphQL server.
 
+:::note
+Parity (OpenEthereum) client doesn't support GraphQL.
+:::
+
 ## graphqlPort
 
 `graphqlPort` GraphQL server listening port.
@@ -75,13 +79,13 @@ The default value `8547` will be used if the graphQL server is enabled `graphql:
 
 ## import
 
-`import` is the ethereum account to import. Only for `geth` nodes.
+`import` is the ethereum account to import. Only for nodes running with `geth` or `parity` clients.
 
 During account creation, it will be encrypted with the password, and during import it will be unlocked using the same password.
 
 :snake: Nodes that import accounts can't enable HTTP RPC server, web socket server, or GraphQL server to prevent funds drainage if exposed to the internet.
 
-Account must be imported if the node is running go-ethereum client with `client: geth` wants to be a signer in proof of authority clique network.
+Account must be imported if the node is running with `geth` or `parity` clients wants to be a signer in proof of authority clique network.
 
 | Syntax      | Type |  Description |
 | ----------- |------| ----------- |
@@ -96,7 +100,7 @@ Account must be imported if the node is running go-ethereum client with `client:
 
 Different clients support different logging vrbosity levels as shown in the following table:
 
-| Logging/Client      | Hyperledger Besu |  Go Ethereum | Parity (Open Ethereum) |
+| Logging/Client      | Hyperledger Besu |  Go Ethereum | Parity (OpenEthereum) |
 | ----------- |------| ----------- | -------- |
 | `off` | :heavy_check_mark: | :heavy_check_mark: | :x: |
 | `fatal` | :heavy_check_mark: |  :x:  |   :x:    |
@@ -111,6 +115,10 @@ Different clients support different logging vrbosity levels as shown in the foll
 
 `miner` enables node mining or signing blocks.
 
+:::note
+Parity (OpenEthereum) client doesn't support PoW mining.
+:::
+
 ## name
 
 `name` is the node name.
@@ -124,7 +132,7 @@ Different clients support different logging vrbosity levels as shown in the foll
 
 `nodekey` is the node private key.
 
-`nodekey` is required if the node is a boot node `bootnode: true`, or if besu node with `client: geth` is a signer in proof of authority clique network or validator in ibft2 network.
+`nodekey` is required if the node is a boot node `bootnode: true`, or if besu node with `client: besu` is a signer in proof of authority clique network or validator in ibft2 network.
 
 ## p2pPort
 
