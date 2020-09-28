@@ -12,7 +12,6 @@ At least one node is required in a network. A node is Ethereum client (geth or b
 | [corsDomains](#corsdomains) | array | domains from which to accept cross origin requests (browser enforced) | `*` |
 | [graphql](#graphql) | boolean | enable GraphQL server | `false` |
 | [graphqlPort](#graphqlport) | number | GraphQL server listening port | `8547` |
-| [graphqlHost](#graphqlhost) | string | GraphQL server host address | `0.0.0.0` |
 | [hosts](#hosts) | array | hostnames to whitelist for RPC access (server enforced) | `*` |
 | [import](#import) | object | ethereum account to import for `geth` node | |
 | [logging](#logging) | string | node logging verbosity level | `info` |
@@ -22,12 +21,10 @@ At least one node is required in a network. A node is Ethereum client (geth or b
 | [p2pPort](#p2pport) | string | node p2p port | `30303` |
 | [resources](#resources) | object | node compute and storage resources to alloacte  | |
 | [rpc](#rpc) | boolean | enable HTTP RPC server | `false` |
-| [rpcHost](#rpchost) | string | HTTP RPC server host address | `0.0.0.0` |
 | [rpcPort](#rpcport) | number | HTTP RPC server listening port | `8545` |
 | [rpcAPI](#rpcapi) | array | services to enable | `web3`, `eth`, and `net` |
 | [syncMode](#syncmode) | string | blockchain synchronization mode | `fast` in public, `full` in private |
 | [ws](#ws) | boolean | enable web socket server | `false` |
-| [wsHost](#wshost) | string | web socket server host address | `0.0.0.0` |
 | [wsPort](#wsport) | number | web socket server listening port | `8546` |
 | [wsAPI](#wsapi) | array | services to enable | `web3`, `eth`, and `net` |
 
@@ -71,12 +68,6 @@ Default value `*` will be used if HTTP RPC server is enabled `rpc: true` or web 
 `graphqlPort` GraphQL server listening port.
 
 The default value `8547` will be used if the graphQL server is enabled `graphql: true`.
-
-## graphqlHost 
-
-`graphqlHost` is the GraphQL server host address.
-
-Default value `0.0.0.0` will be used if graphQL server is enabled `graphql: true`.
 
 ## hosts
 
@@ -164,12 +155,6 @@ cpu requests and limits must have use the pattern `^[1-9][0-9]*m?$` for example 
 
 `rpc` enables the HTTP RPC server.
 
-## rpcHost
-
-`rpcHost` is the HTTP RPC server host address.
-
-The default value `0.0.0.0` will be used if the RPC server is enabled.
-
 ## rpcPort
 
 `rpcPort` is the HTTP RPC server listening port.
@@ -193,12 +178,6 @@ Default value `["web3", "eth", "net]` will be used if HTTP RPC server is enabeld
 ## ws
 
 `ws` enables the web socket server.
-
-## wsHost
-
-`wsHost` is the web socket server host address.
-
-The default value `0.0.0.0` is used if the web socket server is enabled with `ws: true`.
 
 ## wsPort
 
