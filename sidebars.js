@@ -30,6 +30,7 @@ module.exports = {
         'filecoin/intro',
         {Examples: 
           [
+            'filecoin/examples/mainnet',
             'filecoin/examples/nerpa'
           ]
         },

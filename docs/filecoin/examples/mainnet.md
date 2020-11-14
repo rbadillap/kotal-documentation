@@ -1,29 +1,29 @@
 ---
-title: Join Nerpa Network
+title: Join Mainnet
 ---
 
-Filecoin nodes can be deployed to sync Nerpa test network simply by deploying a Filecoin node manifest:
+Filecoin nodes can be deployed to sync Filecoin main network (mainnet) simply by deploying a Filecoin node manifest:
 
 ```yaml
-# nerpa.yaml
+# mainnet.yaml
 # highlight-next-line
 apiVersion: filecoin.kotal.io/v1alpha1
 kind: Node
 metadata:
-  name: nerpa-node
+  name: mainnet-node
 # highlight-start
 spec:
-  network: nerpa
+  network: mainnet
 # highlight-end
 ```
 
 Apply this manifest using kubectl:
 
 ```bash
-$ kubectl apply -f nerpa.yaml
+$ kubectl apply -f mainnet.yaml
 ```
 
-Kotal will create a single filecoin node that syncs Nerpa Filecoin test network, you can verify by getting pods in the default namepsace by:
+Kotal will create a single filecoin node that syncs mainnet Filecoin network, you can verify by getting pods in the default namepsace by:
 
 ```
 $ kubectl get pods
@@ -33,21 +33,21 @@ you will get output similar to this
 
 ```
 NAME                      READY   STATUS    RESTARTS   AGE
-pod/nerpa-node-0          1/1     Running   0          10s
+pod/mainnet-node-0          1/1     Running   0          10s
 ```
 
-Check the logs of `nerpa-node` by:
+Check the logs of `mainnet-node` by:
 
 ```
-$ kubectl logs <nerpa-node pod name>
+$ kubectl logs <mainnet-node pod name>
 ```
 
-You will get nerpa sync logs.
+You will get mainnet sync logs.
 
-Let's send an API call to `nerpa-node`, but first lets forward `hocalhost:1234` calls to `nerpa-node` pod
+Let's send an API call to `mainnet-node`, but first lets forward `hocalhost:1234` calls to `mainnet-node` pod
 
 ```bash
-$ kubectl port-forward <nerpa-node pod name> 1234
+$ kubectl port-forward <mainnet-node pod name> 1234
 
 Forwarding from 127.0.0.1:1234 -> 1234
 Forwarding from [::1]:1234 -> 1234
@@ -56,10 +56,10 @@ Forwarding from [::1]:1234 -> 1234
 In another terminal window, send `Filecoin.ChainHead` API call
 
 :::info
-lotus node token can be found inside nerpa-node pod in `/mnt/data/token` file.
+lotus node token can be found inside mainnet-node pod in `/mnt/data/token` file.
 Can be retrieved by
 ```bash
-$ kubectl exec nerpa-node-0 -- cat /mnt/data/token
+$ kubectl exec mainnet-node-0 -- cat /mnt/data/token
 ```
 :::
 
@@ -146,7 +146,7 @@ You'll get a result similar to this
 Finally you can delete the filecoin node and all its resources by
 
 ```bash
-kubectl delete -f nerpa.yaml
+kubectl delete -f mainnet.yaml
 ```
 
 and kubernetes garbage collector will delete all resources created by the node controller.
