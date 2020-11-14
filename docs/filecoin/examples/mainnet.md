@@ -2,6 +2,8 @@
 title: Join Mainnet
 ---
 
+Mainnet is the primary Filecoin network.
+
 Filecoin nodes can be deployed to sync Filecoin main network (mainnet) simply by deploying a Filecoin node manifest:
 
 ```yaml

@@ -2,6 +2,8 @@
 title: Join Nerpa Network
 ---
 
+Nerpa is a network intended for app developers looking to do small-scale testing. Has small sector sizes and reduced proofs parameters, so sealing takes ~25 minutes.
+
 Filecoin nodes can be deployed to sync Nerpa test network simply by deploying a Filecoin node manifest:
 
 ```yaml
