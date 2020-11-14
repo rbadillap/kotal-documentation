@@ -28,6 +28,11 @@ module.exports = {
     {
       Filecoin: [
         'filecoin/intro',
+        {Examples: 
+          [
+            'filecoin/examples/nerpa'
+          ]
+        },
       ],
     },
     {
