@@ -31,7 +31,8 @@ module.exports = {
         {Examples: 
           [
             'filecoin/examples/mainnet',
-            'filecoin/examples/nerpa'
+            'filecoin/examples/nerpa',
+            'filecoin/examples/calibration',
           ]
         },
       ],
