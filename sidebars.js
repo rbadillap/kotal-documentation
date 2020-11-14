@@ -26,6 +26,11 @@ module.exports = {
       ]
     },
     {
+      Filecoin: [
+        'filecoin/intro',
+      ],
+    },
+    {
       IPFS: [
         'ipfs/intro',
         {Examples: 
