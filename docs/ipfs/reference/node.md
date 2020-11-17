@@ -75,6 +75,6 @@ memory and storage requests and limits must have use the pattern `^[1-9][0-9]*[K
 
 cpu requests and limits must have use the pattern `^[1-9][0-9]*m?$` for example `1000m` (which is equal to `1`), `1500m`, `2`, and `4.`
 
-`cpuLimit` can't be less that `cpu`.
+`cpuLimit` can't be less than `cpu`.
 
-`memoryLimit` can't be less that `memory`.
+`memoryLimit` can't be less than `memory`.

@@ -36,6 +36,11 @@ module.exports = {
             'filecoin/examples/butterfly',
           ]
         },
+        {Reference: 
+          [
+            'filecoin/reference/node',
+          ]
+        },
       ],
     },
     {
