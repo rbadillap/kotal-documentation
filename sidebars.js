@@ -33,6 +33,7 @@ module.exports = {
             'filecoin/examples/mainnet',
             'filecoin/examples/nerpa',
             'filecoin/examples/calibration',
+            'filecoin/examples/butterfly',
           ]
         },
       ],
