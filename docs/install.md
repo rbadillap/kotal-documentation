@@ -21,11 +21,11 @@ Kotal **webhook** component uses cert-manager for issuing certificates to defaul
 cert-manager installation guide can be found [here](https://cert-manager.io/docs/installation/).
 
 
-## Instal kotal operator
+## Install kotal operator
 
-:::caution
-This section is a work in progress.
-:::
+```bash
+$ kubectl apply -f https://github.com/kotalco/kotal/releases/download/v0.1-alpha.1/kotal.yaml
+```
 
 ## Deploy network
 
