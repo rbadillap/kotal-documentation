@@ -93,7 +93,6 @@ Note that `homestead` fork will be ignored in PoA Clique consensus network by Pa
 | homestead | number | [Homestead](https://blog.ethereum.org/2016/02/29/homestead-release/) fork activation block number |
 | dao | number | [DAO](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-779.md) fork activation block number |
 | eip150 | number | [eip150](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-150.md) fork activation block number |
-| eip150Hash | string | [eip150](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-150.md) block hash (hexadecimal string), used for fast sync |
 | eip155 | number | [eip155](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-155.md) fork activation block number |
 | eip158 | number | [eip158](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-158.md) fork activation block number |
 | byzantium | number | [Byzantium](https://blog.ethereum.org/2017/10/12/byzantium-hf-announcement/) fork activation block number |
