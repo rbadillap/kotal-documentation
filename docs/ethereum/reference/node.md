@@ -24,6 +24,7 @@ At least one node is required in a network. A node is Ethereum client (geth, bes
 | [rpc](#rpc) | boolean | enable HTTP RPC server | `false` |
 | [rpcPort](#rpcport) | number | HTTP RPC server listening port | `8545` |
 | [rpcAPI](#rpcapi) | array | services to enable | `web3`, `eth`, and `net` |
+| [staticNodes](#staticnodes) | array | set of trusted ethereum nodes to maintain connection to |  |
 | [syncMode](#syncmode) | string | blockchain synchronization mode | `fast` in public, `full` in private |
 | [ws](#ws) | boolean | enable web socket server | `false` |
 | [wsPort](#wsport) | number | web socket server listening port | `8546` |
@@ -185,6 +186,15 @@ Default value `8545` will be used if the HTTP RPC server is enabled with `rpc: t
 `rpcAPI` is a list of RPC services to enable.
 
 Default value `["web3", "eth", "net]` will be used if HTTP RPC server is enabeld with `rpc: true`.
+
+## staticNodes
+
+`staticNodes` is a set of trusted ethereum nodes to maintain connection to
+
+:::info
+Static nodes are exempt from maximum peer and remote connection limits.
+Ethereum clients periodically initiating a connection to any unconnected static node.
+:::
 
 ## syncMode
 
