@@ -5,7 +5,7 @@ title: Create private IBFT2 Network
 Using Kotal, you can create ibft2 networks.
 
 :::caution
-Go-Ethereum doesn't support ibft2 networks. Use Hyperledger Besu client instead.
+Go-Ethereum and Parity (OpenEthereum) doesn't support ibft2 consensus. Use Hyperledger Besu client instead.
 :::
 
 When creating private networks, `id`, `consensus` and `genesis` config are required. Here's an example of a single miner besu node ibft2 network.
