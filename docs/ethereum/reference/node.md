@@ -7,6 +7,7 @@ At least one node is required in a network. A node is Ethereum client (geth, bes
 | Syntax      | Type |  Description | Default |
 | ----------- |------| ----------- | ----- |
 | [bootnode](#bootnode) | boolean | node is bootnode | `false` |
+| [bootnodes](#bootnodes) | array | ethereum node URLS for p2p discovery bootstrap |  |
 | [client](#client) | string | ethereum client powering the node | `besu` |
 | [coinbase](#coinbase) | string | ethereum account to which mining rewards are paid | |
 | [corsDomains](#corsdomains) | array | domains from which to accept cross origin requests (browser enforced) | `*` |
@@ -35,6 +36,15 @@ At least one node is required in a network. A node is Ethereum client (geth, bes
 The first node in the `spec.nodes` list must be a bootnode with `bootnode: true`
 
 Bootnodes must use node private key, check [nodekey](#nodekey).
+
+## bootnodes
+
+`bootnodes` is ethereum node URLs for p2p network discovery bootstrap.
+
+:::warning
+Each Ethereum clients has hardcoded bootnodes for public main and test networks. `bootnodes` will override these bootnodes.
+
+:::
 
 ## client
 
