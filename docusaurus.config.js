@@ -7,7 +7,9 @@ module.exports = {
   organizationName: 'kotal',
   projectName: 'Kotal',
   themeConfig: {
-    disableDarkMode: true,
+    colorMode: {
+      disableSwitch: true
+    },
     image: 'img/cloud_native.png',
     navbar: {
       title: 'Kotal',
@@ -15,7 +17,7 @@ module.exports = {
         alt: 'Kotal',
         src: 'img/logo.svg',
       },
-      links: [
+      items: [
         {
           to: 'docs/',
           activeBasePath: 'docs',
@@ -57,8 +59,6 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          // It is recommended to set document id as docs home page (`docs/` path).
-          homePageId: 'kotal',
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
             'https://github.com/kotalco/kotal-documentation/tree/master',

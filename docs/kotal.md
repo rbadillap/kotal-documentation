@@ -1,5 +1,6 @@
 ---
 id: kotal
+slug: /
 title: Kotal
 sidebar_label: Introduction
 ---
