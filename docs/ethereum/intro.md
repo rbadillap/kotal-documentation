@@ -2,9 +2,32 @@
 title: Introduction
 ---
 
-Kotal extended Kubernetes with `Network` custom resource in the `ethereum.kotal.io/v1alpha1` group version.
-Kotal network controller is watching for any new network deployments or updating an existing network to do its magic.
-Here's an example of Ethereum network of 1 node joining rinkeby testnet:
+Kotal extended Kubernetes with `Node` and `Network` custom resource in the `ethereum.kotal.io/v1alpha1` group version.
+
+
+## Node 
+`Node` is a single Ethereum node joining a public or private network.
+
+Example of Go Ethereum (Geth) `Node` joining Ethereum main network:
+
+```yaml {1-2}
+apiVersion: ethereum.kotal.io/v1alpha1
+kind: Node
+metadata:
+  name: mainnet-node
+spec:
+  client: geth
+  join: mainnet
+  rpc: true
+```
+
+## Network
+
+`Network` is a set of Ethereum nodes sharing same network config like genesis block and connecting to each other and joining public or private network.
+
+Kotal supports joining Ethereum public networks like [mainnet](examples/mainnet), [ropsten](examples/ropsten), [rinkeby](examples/rinkeby), [goerli](examples/goerli) and creating private consortium networks using different consensus algorithms like [proof of work](examples/pow), [proof of authority](examples/poa) and [IBFT2](examples/ibft2).
+
+Example of multi-client Ethereum `Network` of 2 nodes running geth and besu clients respectively joining rinkeby testnet:
 
 ```yaml {1-2}
 apiVersion: ethereum.kotal.io/v1alpha1
@@ -15,10 +38,13 @@ spec:
   join: rinkeby
   nodes:
     - name: node-1
-      rpc: true
-```
+      client: geth
+      bootnode: true
+      nodekey: "0x0x608e9b6f67c65e47531e08e8e501386dfae63a540fa3c48802c8aad854510b4e"
+    - name: node-2
+      client: besu
 
-Kotal supports joining Ethereum public networks like [mainnet](examples/mainnet), [ropsten](examples/ropsten), [rinkeby](examples/rinkeby), [goerli](examples/goerli) and creating private consortium networks using different consensus algorithms like [proof of work](examples/pow), [proof of authority](examples/poa) and [IBFT2](examples/ibft2).
+```
 
 ## Multi-client Support
 Kotal supports the following Ethereum 1 clients:
