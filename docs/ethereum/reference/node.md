@@ -2,10 +2,27 @@
 title: Node
 ---
 
-At least one node is required in a network. A node is Ethereum client (geth, besu or parity) running inside a pod with compute and storage resources and scheduled in a Kubernetes node.
+Kotal extended Kubernetes with `Node` custom resource in the `ethereum.kotal.io/v1alpha1` group version.
+
+```yaml {1-2}
+apiVersion: ethereum.kotal.io/v1alpha1
+kind: Node
+metadata:
+  name: mainnet-node
+spec:
+  client: geth
+  join: mainnet
+  rpc: true
+```
 
 | Syntax      | Type |  Description | Default |
 | ----------- |------| ----------- | ----- |
+| [id](#id)      | number | Network id used for p2p communcations between network nodes| |
+| [join](#join)   | string | Public network name to join, like `mainnet`, `rinkeby`, and `goerli` | |
+| [consensus](#consensus) | string | Network consensus algorithm name, like `poa`, `pow`, and `ibft2`| |
+| [highlyAvailable](#highly-available) | boolean | Ethereum nodes will be scheduled on different kubernetes nodes | `false` |
+| [topologyKey](#topology-key) | string | kubernetes node label key used to distribute ethereum nodes | `topology.kubernetes.io/zone` |
+| [genesis](#genesis)   | object | Genesis block configuration | |
 | [bootnode](#bootnode) | boolean | node is bootnode | `false` |
 | [bootnodes](#bootnodes) | array | ethereum node URLS for p2p discovery bootstrap |  |
 | [client](#client) | string | ethereum client powering the node | `besu` |
@@ -29,6 +46,76 @@ At least one node is required in a network. A node is Ethereum client (geth, bes
 | [ws](#ws) | boolean | enable web socket server | `false` |
 | [wsPort](#wsport) | number | web socket server listening port | `8546` |
 | [wsAPI](#wsapi) | array | services to enable | `web3`, `eth`, and `net` |
+
+## id
+
+:::note
+If the node is created by a [Network](network) controller, the network `.spec.id` will be used, and node `.spec.id` will be ignored.
+:::
+
+`id` is the network id used for p2p communications between network nodes in private networks.
+
+`id` is required in private networks.
+
+`id` can't be provided while joining a public network.
+
+`id` can't be updated (immutable).
+
+## join
+
+:::note
+If the node is created by a [Network](network) controller, the network `.spec.join` will be used, and node `.spec.join` will be ignored.
+:::
+
+`join` is the public network name to join, like `rinkeby`.
+
+`join` can't be provided in private networks.
+
+`join` can't be updated (immutable).
+
+## consensus
+
+:::note
+If the node is created by a [Network](network) controller, the network `.spec.consensus` will be used, and node `.spec.consensus` will be ignored.
+:::
+
+`consensus` is the network consensus algorithm name, like `ibft2`.
+
+`consensus` is required in private networks.
+
+`consensus` possible values are `poa`, `pow` or `ibft2`.
+
+`consensus` can't be updated (immutable).
+
+## highly available
+
+:::note
+If the node is created by a [Network](network) controller, the network `.spec.highlyAvailable` will be used, and node `.spec.highlyAvailable` will be ignored.
+:::
+
+`highlyAvailable` controls if Ethereum nodes will be scheduled on different Kubernetes nodes.
+
+## topology key
+
+:::note
+If the node is created by a [Network](network) controller, the network `.spec.topologyKey` will be used, and node `.spec.topologyKey` will be ignored.
+:::
+
+`topologyKey` is Kubernetes node label key used to distribute ethereum nodes pods on different kubernetes nodes.
+
+## genesis
+
+:::note
+If the node is created by a [Network](network) controller, the network `.spec.genesis` will be used, and node `.spec.genesis` will be ignored.
+:::
+
+`genesis` is the genesis block configuration.
+
+`genesis` block is required in private networks.
+
+`genesis` can't be updated (immutable).
+
+For extensive details, check [genesis](genesis) reference.
 
 ## bootnode
 
