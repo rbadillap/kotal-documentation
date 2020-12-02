@@ -4,13 +4,18 @@ title: Network
 
 Kotal extended Kubernetes with `Network` custom resource in the `ethereum.kotal.io/v1alpha1` group version.
 
-Network is a Kubernetes object that has a similar structure to resources you're familiar with like pod and deployment.
+Network controller creates [Node](node) resources from the network `.spec.nodes`.
 
-```yaml
+```yaml {1-2}
 apiVersion: ethereum.kotal.io/v1alpha1
 kind: Network
-metadata: # network name, namespance, labels ...
-spec: # network spec
+metadata:
+  name: sample-network
+spec:
+  join: rinkeby
+  nodes:
+    - name: node-1
+      rpc: true
 ```
 
 ## Network Spec
@@ -63,7 +68,7 @@ spec:
 
 `consensus` is required in private networks.
 
-`consensus` possible values are `pow`, `pow` or `ibft2`.
+`consensus` possible values are `poa`, `pow` or `ibft2`.
 
 `consensus` can't be updated (immutable).
 
@@ -90,5 +95,13 @@ For extensive details, check [genesis](genesis) reference.
 `nodes` is the Network nodes.
 
 `nodes` is required, at least one node must be specified.
+
+:::info
+nodes in the network `.spec.nodes` are named nodes, require a `name` value.
+:::
+
+:::warning
+Network `id`, `join`, `consensus`, `genesis`, `highlyAvailable`, `topologyKey` will override node values, so don't specify these values in the `.spec.nodes` because they won't take effect.
+:::
 
 For extensive details, check [node](node) reference.
