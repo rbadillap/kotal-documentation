@@ -1,5 +1,5 @@
 ---
-title: Create private IBFT2 Network
+title: Private IBFT2 Network
 ---
 
 Using Kotal, you can create ibft2 networks.

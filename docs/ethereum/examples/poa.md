@@ -1,5 +1,5 @@
 ---
-title: Create private PoA Network
+title: Private PoA Network
 ---
 
 Using Kotal, you can create private cross-client Proof of Authority (Clique) networks.

@@ -1,5 +1,5 @@
 ---
-title: Create private PoW Network
+title: Private PoW Network
 ---
 
 Using Kotal, you can create private cross-client Proof of Work networks.
