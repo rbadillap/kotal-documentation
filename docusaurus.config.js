@@ -1,6 +1,6 @@
 module.exports = {
   title: 'Kotal',
-  tagline: 'Decentralized Blockchain Operator',
+  tagline: 'Simplifying Blockchain DevOps',
   url: 'https://kotal.co',
   baseUrl: '/',
   favicon: 'img/favicon.ico',

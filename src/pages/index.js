@@ -9,7 +9,7 @@ import styles from './styles.module.css';
 const features = [
   {
     title: <>Cloud Native</>,
-    imageUrl: 'img/cloud_native.svg',
+    // imageUrl: 'img/cloud_native.svg',
     description: (
       <>
         Kotal is built from the ground up using cloud native technologies to make it run on all clouds out of the box.
@@ -18,7 +18,7 @@ const features = [
   },
   {
     title: <>Protocol Agnostic</>,
-    imageUrl: 'img/protocol_agnostic.svg',
+    // imageUrl: 'img/protocol_agnostic.svg',
     description: (
       <>
       Kotal supports both Ethereum and IPFS and will continue to support other Blockchain protocols like Ethereum 2.0 and Filecoin.
@@ -27,7 +27,7 @@ const features = [
   },
   {
     title: <>Multi Client</>,
-    imageUrl: 'img/multi_client.svg',
+    // imageUrl: 'img/multi_client.svg',
     description: (
       <>
         Kotal starts with protocol reference clients and continue to support other clients to make it easy for Blockchain node operators to run multi-client Blockchain infrastructure.
@@ -62,6 +62,7 @@ function Home() {
         <div className="container">
           <h1 className="hero__title">{siteConfig.title}</h1>
           <p className="hero__subtitle">{siteConfig.tagline}</p>
+          
           <div className={styles.buttons}>
             <Link
               className={clsx(
@@ -80,6 +81,10 @@ function Home() {
               to="https://calendly.com/kotal/30min">
               Schedule a Call
             </Link>
+          </div>
+          <div className="hero__subtitle backing">
+            <span className="backed">Backed by <a href="https://consensys.net/">ConsenSys</a>, <a href="https://protocol.ai/">Protocol Labs</a> and <a href="https://filecoin.io/">FileCoin</a> </span>
+            <img className="backers" src='img/backed_by.svg' title="backed by" />
           </div>
         </div>
       </header>
