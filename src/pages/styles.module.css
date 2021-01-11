@@ -43,3 +43,13 @@
 .getStarted {
   margin-right: 10px;
 }
+
+.email {
+  display: inline-block;
+  width: 200px;
+  height: 35px;
+  margin: 5px;
+  padding: 5px;
+  border-color: grey;
+  border-radius: 5px;
+}

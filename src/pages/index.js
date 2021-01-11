@@ -86,6 +86,14 @@ function Home() {
             <span className="backed">Backed by <a href="https://consensys.net/">ConsenSys</a>, <a href="https://protocol.ai/">Protocol Labs</a> and <a href="https://filecoin.io/">FileCoin</a> </span>
             <img className="backers" src='img/backed_by.svg' title="backed by" />
           </div>
+          <form name="contact" netlify>
+              <span>
+                Subscribe to <strong>Kotal</strong> product updates
+              </span>
+              <br></br>
+              <input className={styles.email} placeholder="your email address" type="text" name="email" />
+              <button className="button button--outline button--secondary" type="submit">Subscribe</button>
+          </form>
         </div>
       </header>
       <main>
