@@ -12,39 +12,12 @@ module.exports = {
     },
     image: 'img/cloud_native.png',
     navbar: {
-      title: 'Kotal',
+      title: 'Kotal Documentation',
       logo: {
         alt: 'Kotal',
         src: 'img/logo.svg',
       },
-      items: [
-        {
-          to: 'docs/',
-          activeBasePath: 'docs',
-          label: 'Documentation',
-          position: 'left',
-        },
-        {
-          label: '❤️ Support',
-          to: 'https://gitcoin.co/grants/1070/kotal-multi-client-cloud-agnostic-blockchain-infra',
-          position: 'left',
-        },
-        {
-          href: 'https://twitter.com/kotalco',
-          label: 'Twitter',
-          position: 'right',
-        },
-        {
-          href: 'https://discord.gg/kTxy4SA',
-          label: 'Join Our Discord',
-          position: 'right',
-        },
-        {
-          href: 'https://github.com/kotalco/kotal',
-          label: 'GitHub',
-          position: 'right',
-        },
-      ],
+      items: [],
     },
     footer: {
       style: 'light',
@@ -60,6 +33,7 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
+          routeBasePath: '/',
           editUrl:
             'https://github.com/kotalco/kotal-documentation/tree/master',
         },
