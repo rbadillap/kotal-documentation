@@ -4,6 +4,10 @@ title: Introduction
 
 Kotal extended Kubernetes with `BeaconNode` and `Validator` custom resources in the `ethereum2.kotal.io/v1alpha1` group version.
 
+:::info
+Kotal seperates between beacon node and validator client by using different API resources `BeaconNode` and `Validator`. So you can't run a beacon node and validator client in the same process/container.
+:::
+
 ## Beacon Node
 
 `BeaconNode` is Ethereum 2.0 beacon node connecting to Ethereum 1 endpoint and syncing the beacon chain.
