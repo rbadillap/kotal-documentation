@@ -17,7 +17,13 @@ module.exports = {
         alt: 'Kotal',
         src: 'img/logo.svg',
       },
-      items: [],
+      items: [
+        {
+          label: "Back to Homepage",
+          position: "right",
+          href: "https://kotal.co",
+        }
+      ],
     },
     footer: {
       style: 'light',
