@@ -30,7 +30,8 @@ module.exports = {
         'ethereum2/intro',
         {
           Examples: [
-            'ethereum2/examples/beacon'
+            'ethereum2/examples/beacon',
+            'ethereum2/examples/validator',
           ],
         }
       ]
