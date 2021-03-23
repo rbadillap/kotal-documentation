@@ -28,6 +28,11 @@ module.exports = {
     {
       "Ethereum 2.0": [
         'ethereum2/intro',
+        {
+          Examples: [
+            'ethereum2/examples/beacon'
+          ],
+        }
       ]
     },
     {
