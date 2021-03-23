@@ -26,6 +26,11 @@ module.exports = {
       ]
     },
     {
+      "Ethereum 2.0": [
+        'ethereum2/intro',
+      ]
+    },
+    {
       Filecoin: [
         'filecoin/intro',
         {Examples: 
