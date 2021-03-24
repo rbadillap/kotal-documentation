@@ -38,7 +38,7 @@ kubectl explain beaconnode
 kubectl explain beaconnode.spec
 ```
 
-Full beacon node reference is documented [here](reference/baeacon).
+Full beacon node reference is documented [here](reference/beacon).
 
 ## Validator Client
 

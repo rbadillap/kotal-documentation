@@ -11,7 +11,7 @@ apiVersion: ethereum2.kotal.io/v1alpha1
 # highlight-next-line
 kind: BeaconNode
 metadata:
-  name: prysm-beacon-node
+  name: teku-beacon-node
 # highlight-start
 spec:
   join: pyrmont
