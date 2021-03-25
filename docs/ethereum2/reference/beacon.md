@@ -31,7 +31,7 @@ spec:
 | [grpcHost](#grpc-host)           | string | GRPC gateway server host           | 0.0.0.0 |
 | [grpcPort](#grpc-port)           | number | GRPC gateway server port           | 3500    |
 | [p2pPort](#p2p-port)             | number | p2p and discovery port             | 9000    |
-| [resources](#resources)          | object | node compute and storage resources |         |
+| [resources](#resources)          | object | Node compute and storage resources |         |
 
 ## join
 

@@ -35,6 +35,7 @@ module.exports = {
           ],
           Reference: [
             'ethereum2/reference/beacon',
+            'ethereum2/reference/validator',
           ],
         }
       ]
