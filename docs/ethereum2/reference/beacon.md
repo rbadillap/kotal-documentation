@@ -107,8 +107,6 @@ GRPC gateway is only supported by `prysm` client.
 
 ## resources
 
-## resources
-
 `resources` allocates compute and storage resources to the node.
 
 `resources` object has the following fields:
@@ -121,9 +119,9 @@ GRPC gateway is only supported by `prysm` client.
 | memoryLimit | string | memory this node is limited to              | `16Gi`  |
 | storage     | string | disk space this node requires               | `200Gi` |
 
-memory and storage requests and limits must have use the pattern `^[1-9][0-9]*[KMGTPE]i$` for example `1500Mi`, `30Gi`, and `1Ti`.
+memory and storage requests and limits must use the pattern `^[1-9][0-9]*[KMGTPE]i$` for example `1500Mi`, `30Gi`, and `1Ti`.
 
-cpu requests and limits must have use the pattern `^[1-9][0-9]*m?$` for example `1000m` (which is equal to `1` core), `1500m` which is 1.5 core, `2` cores, and `4` cores.
+cpu requests and limits must use the pattern `^[1-9][0-9]*m?$` for example `1000m` (which is equal to `1` core), `1500m` which is 1.5 core, `2` cores, and `4` cores.
 
 `cpuLimit` can't be less than `cpu`.
 

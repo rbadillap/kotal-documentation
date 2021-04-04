@@ -38,8 +38,8 @@ Confirm that the beacon node has been created by:
 ```sh
 $ kubectl get beaconnodes
 
-NAME               AGE
-teku-beacon-node   1m
+NAME               CLIENT   JOIN      AGE
+teku-beacon-node   teku     pyrmont   1m
 ```
 
 Get the pods created for the beacon node:

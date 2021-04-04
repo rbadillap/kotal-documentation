@@ -4,13 +4,13 @@ title: Node
 
 At least one node is required in IPFS Swarm. A node is ipfs client (go-ipfs) running inside a pod with compute and storage resources and scheduled in a kubernetes node.
 
-| Syntax      | Type |  Description | Default |
-| ----------- |------| ----------- | ----- |
-| [name](#name) | node | node name |  |
-| [id](#id) | node | id is the node identifer derived from private key |  |
-| [privateKey](#privatekey) | string | node private key from which the id is derived |  |
-| [profiles](#profiles) | Array | list of configuration profiles to apply | |
-| [resources](#resources) | Object | node compute and storage resources to alloacte | |
+| Syntax                    | Type   | Description                                       | Default |
+| ------------------------- | ------ | ------------------------------------------------- | ------- |
+| [name](#name)             | node   | node name                                         |         |
+| [id](#id)                 | node   | id is the node identifer derived from private key |         |
+| [privateKey](#privatekey) | string | node private key from which the id is derived     |         |
+| [profiles](#profiles)     | Array  | list of configuration profiles to apply           |         |
+| [resources](#resources)   | Object | node compute and storage resources to alloacte    |         |
 
 ## name
 
@@ -49,31 +49,31 @@ $ ipfs-key -type Ed25519 | base64
 
 `profiles` possible values are:
 
-* `server`
-* `randomports`
-* `default-datastore`
-* `local-discovery`
-* `test`
-* `default-networking`
-* `flatfs`
-* `badgerds`
-* `lowpower`
+- `server`
+- `randomports`
+- `default-datastore`
+- `local-discovery`
+- `test`
+- `default-networking`
+- `flatfs`
+- `badgerds`
+- `lowpower`
 
 ## resources
 
 `resources` allocates compute and storage resources to the node.
 
-| Syntax      | Type |  Description | Defalt |
-| ----------- |------| ----------- | ---- |
-| cpu | string | number of cpu cores this node requires | `1` |
-| cpuLimit | string | number of cpu cores this node is limited to | `2` |
-| memory | string | memory this node requires | `2Gi` |
-| memoryLimit | string | memory this node is limited to | `4Gi` |
-| storage | string | disk space this node requires | `10Gi` |
+| Syntax      | Type   | Description                                 | Defalt |
+| ----------- | ------ | ------------------------------------------- | ------ |
+| cpu         | string | number of cpu cores this node requires      | `1`    |
+| cpuLimit    | string | number of cpu cores this node is limited to | `2`    |
+| memory      | string | memory this node requires                   | `2Gi`  |
+| memoryLimit | string | memory this node is limited to              | `4Gi`  |
+| storage     | string | disk space this node requires               | `10Gi` |
 
-memory and storage requests and limits must have use the pattern `^[1-9][0-9]*[KMGTPE]i$` for example `1500Mi`, `30Gi`, and `1Ti`.
+memory and storage requests and limits must use the pattern `^[1-9][0-9]*[KMGTPE]i$` for example `1500Mi`, `30Gi`, and `1Ti`.
 
-cpu requests and limits must have use the pattern `^[1-9][0-9]*m?$` for example `1000m` (which is equal to `1`), `1500m`, `2`, and `4.`
+cpu requests and limits must use the pattern `^[1-9][0-9]*m?$` for example `1000m` (which is equal to `1`), `1500m`, `2`, and `4.`
 
 `cpuLimit` can't be less than `cpu`.
 

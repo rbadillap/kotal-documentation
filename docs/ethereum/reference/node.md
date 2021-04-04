@@ -15,37 +15,37 @@ spec:
   rpc: true
 ```
 
-| Syntax      | Type |  Description | Default |
-| ----------- |------| ----------- | ----- |
-| [id](#id)      | number | Network id used for p2p communcations between network nodes| |
-| [join](#join)   | string | Public network name to join, like `mainnet`, `rinkeby`, and `goerli` | |
-| [consensus](#consensus) | string | Network consensus algorithm name, like `poa`, `pow`, and `ibft2`| |
-| [highlyAvailable](#highly-available) | boolean | Ethereum nodes will be scheduled on different kubernetes nodes | `false` |
-| [topologyKey](#topology-key) | string | kubernetes node label key used to distribute ethereum nodes | `topology.kubernetes.io/zone` |
-| [genesis](#genesis)   | object | Genesis block configuration | |
-| [bootnode](#bootnode) | boolean | node is bootnode | `false` |
-| [bootnodes](#bootnodes) | array | ethereum node URLS for p2p discovery bootstrap |  |
-| [client](#client) | string | ethereum client powering the node | `besu` |
-| [coinbase](#coinbase) | string | ethereum account to which mining rewards are paid | |
-| [corsDomains](#corsdomains) | array | domains from which to accept cross origin requests (browser enforced) | `*` |
-| [graphql](#graphql) | boolean | enable GraphQL server | `false` |
-| [graphqlPort](#graphqlport) | number | GraphQL server listening port | `8547` |
-| [hosts](#hosts) | array | hostnames to whitelist for RPC access (server enforced) | `*` |
-| [import](#import) | object | ethereum account to import for `geth` node | |
-| [logging](#logging) | string | node logging verbosity level | `info` |
-| [miner](#miner) | boolean | node is mining or signing blocks ? | false |
-| [name](#name) | string | node name | |
-| [nodekey](#nodekey) | string | node private key | |
-| [p2pPort](#p2pport) | string | node p2p port | `30303` |
-| [resources](#resources) | object | node compute and storage resources to alloacte  | |
-| [rpc](#rpc) | boolean | enable HTTP RPC server | `false` |
-| [rpcPort](#rpcport) | number | HTTP RPC server listening port | `8545` |
-| [rpcAPI](#rpcapi) | array | services to enable | `web3`, `eth`, and `net` |
-| [staticNodes](#staticnodes) | array | set of trusted ethereum nodes to maintain connection to |  |
-| [syncMode](#syncmode) | string | blockchain synchronization mode | `fast` in public, `full` in private |
-| [ws](#ws) | boolean | enable web socket server | `false` |
-| [wsPort](#wsport) | number | web socket server listening port | `8546` |
-| [wsAPI](#wsapi) | array | services to enable | `web3`, `eth`, and `net` |
+| Syntax                               | Type    | Description                                                           | Default                             |
+| ------------------------------------ | ------- | --------------------------------------------------------------------- | ----------------------------------- |
+| [id](#id)                            | number  | Network id used for p2p communcations between network nodes           |                                     |
+| [join](#join)                        | string  | Public network name to join, like `mainnet`, `rinkeby`, and `goerli`  |                                     |
+| [consensus](#consensus)              | string  | Network consensus algorithm name, like `poa`, `pow`, and `ibft2`      |                                     |
+| [highlyAvailable](#highly-available) | boolean | Ethereum nodes will be scheduled on different kubernetes nodes        | `false`                             |
+| [topologyKey](#topology-key)         | string  | kubernetes node label key used to distribute ethereum nodes           | `topology.kubernetes.io/zone`       |
+| [genesis](#genesis)                  | object  | Genesis block configuration                                           |                                     |
+| [bootnode](#bootnode)                | boolean | node is bootnode                                                      | `false`                             |
+| [bootnodes](#bootnodes)              | array   | ethereum node URLS for p2p discovery bootstrap                        |                                     |
+| [client](#client)                    | string  | ethereum client powering the node                                     | `besu`                              |
+| [coinbase](#coinbase)                | string  | ethereum account to which mining rewards are paid                     |                                     |
+| [corsDomains](#corsdomains)          | array   | domains from which to accept cross origin requests (browser enforced) | `*`                                 |
+| [graphql](#graphql)                  | boolean | enable GraphQL server                                                 | `false`                             |
+| [graphqlPort](#graphqlport)          | number  | GraphQL server listening port                                         | `8547`                              |
+| [hosts](#hosts)                      | array   | hostnames to whitelist for RPC access (server enforced)               | `*`                                 |
+| [import](#import)                    | object  | ethereum account to import for `geth` node                            |                                     |
+| [logging](#logging)                  | string  | node logging verbosity level                                          | `info`                              |
+| [miner](#miner)                      | boolean | node is mining or signing blocks ?                                    | false                               |
+| [name](#name)                        | string  | node name                                                             |                                     |
+| [nodekey](#nodekey)                  | string  | node private key                                                      |                                     |
+| [p2pPort](#p2pport)                  | string  | node p2p port                                                         | `30303`                             |
+| [resources](#resources)              | object  | node compute and storage resources to alloacte                        |                                     |
+| [rpc](#rpc)                          | boolean | enable HTTP RPC server                                                | `false`                             |
+| [rpcPort](#rpcport)                  | number  | HTTP RPC server listening port                                        | `8545`                              |
+| [rpcAPI](#rpcapi)                    | array   | services to enable                                                    | `web3`, `eth`, and `net`            |
+| [staticNodes](#staticnodes)          | array   | set of trusted ethereum nodes to maintain connection to               |                                     |
+| [syncMode](#syncmode)                | string  | blockchain synchronization mode                                       | `fast` in public, `full` in private |
+| [ws](#ws)                            | boolean | enable web socket server                                              | `false`                             |
+| [wsPort](#wsport)                    | number  | web socket server listening port                                      | `8546`                              |
+| [wsAPI](#wsapi)                      | array   | services to enable                                                    | `web3`, `eth`, and `net`            |
 
 ## id
 
@@ -144,12 +144,11 @@ Client `geth` or `parity` can't be used if network consensus is `ibft2`.
 
 Client `geth` or `parity` can't be used in fixed difficulty proof of work networks, where `spec.consensus` is `pow` and `spec.genesis.ethash.fixedDifficulty` is not null.
 
-## coinbase 
+## coinbase
 
 `coinbase` is ethereum account to which mining rewards are paid.
 
 `coinbase` is required if the node is mining `miner: true`.
-
 
 ## corsDomains
 
@@ -162,9 +161,10 @@ Default value `*` will be used if HTTP RPC server is enabled `rpc: true` or web 
 `graphql` enables the GraphQL server.
 
 :::note
-* Parity (OpenEthereum) client doesn't support GraphQL.
-* Geth (Go-Ethereum) GraphQL server can be used only if RPC is enabled as of geth [v1.9.19 release](https://github.com/ethereum/go-ethereum/releases/tag/v1.9.19)
-:::
+
+- Parity (OpenEthereum) client doesn't support GraphQL.
+- Geth (Go-Ethereum) GraphQL server can be used only if RPC is enabled as of geth [v1.9.19 release](https://github.com/ethereum/go-ethereum/releases/tag/v1.9.19)
+  :::
 
 ## graphqlPort
 
@@ -186,10 +186,10 @@ During account creation, it will be encrypted with the password, and during impo
 
 Account must be imported if the node is running with `geth` or `parity` clients wants to be a signer in proof of authority clique network.
 
-| Syntax      | Type |  Description |
-| ----------- |------| ----------- |
+| Syntax     | Type   | Description                        |
+| ---------- | ------ | ---------------------------------- |
 | privatekey | string | account private key in hexadecimal |
-| password | string | encryption secret |
+| password   | string | encryption secret                  |
 
 ## logging
 
@@ -199,16 +199,16 @@ Account must be imported if the node is running with `geth` or `parity` clients 
 
 Different clients support different logging vrbosity levels as shown in the following table:
 
-| Logging/Client      | Hyperledger Besu |  Go Ethereum | Parity (OpenEthereum) |
-| ----------- |------| ----------- | -------- |
-| `off` | :heavy_check_mark: | :heavy_check_mark: | :x: |
-| `fatal` | :heavy_check_mark: |  :x:  |   :x:    |
-| `error` | :heavy_check_mark: |  :heavy_check_mark:  |   :heavy_check_mark:    |
-| `warn` | :heavy_check_mark: |  :heavy_check_mark:  |   :heavy_check_mark:    |
-| `debug` | :heavy_check_mark: |  :heavy_check_mark:  |   :heavy_check_mark:    |
-| `info` | :heavy_check_mark: |  :heavy_check_mark:  |   :heavy_check_mark:    |
-| `trace` | :heavy_check_mark: | :x:   |   :heavy_check_mark:    |
-| `all` | :heavy_check_mark: |  :heavy_check_mark:  |    :x:   |
+| Logging/Client | Hyperledger Besu   | Go Ethereum        | Parity (OpenEthereum) |
+| -------------- | ------------------ | ------------------ | --------------------- |
+| `off`          | :heavy_check_mark: | :heavy_check_mark: | :x:                   |
+| `fatal`        | :heavy_check_mark: | :x:                | :x:                   |
+| `error`        | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:    |
+| `warn`         | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:    |
+| `debug`        | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:    |
+| `info`         | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:    |
+| `trace`        | :heavy_check_mark: | :x:                | :heavy_check_mark:    |
+| `all`          | :heavy_check_mark: | :heavy_check_mark: | :x:                   |
 
 ## miner
 
@@ -226,7 +226,6 @@ Parity (OpenEthereum) client doesn't support PoW mining.
 
 `name` can't be updated (immutable).
 
-
 ## nodekey
 
 `nodekey` is the node private key.
@@ -241,18 +240,18 @@ Parity (OpenEthereum) client doesn't support PoW mining.
 
 `resources` allocates compute and storage resources to the node.
 
-| Syntax      | Type |  Description | Default |
-| ----------- |------| ----------- | ---- |
-| cpu | string | number of cpu cores this node requires | `2` in private, `4` in public |
-| cpuLimit | string | number of cpu cores this node is limited to | `3` in private, `6` in public |
-| memory | string | memory this node requires | `4Gi` in private, `8Gi` in public |
-| memoryLimit | string | memory this node is limited to | `8Gi` in private, `16Gi` in public |
-| storage | string | disk space this node requires | `100Gi` in private, `6Ti` in mainnet with full sync, `750Gi` in mainnet wit fast sync, `25Gi` in public test networks |
-| storageClass | string | Node volume storage class | Cluster's default storage class will be used as defined by cluster admin or cloud provider |
+| Syntax       | Type   | Description                                 | Default                                                                                                               |
+| ------------ | ------ | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| cpu          | string | number of cpu cores this node requires      | `2` in private, `4` in public                                                                                         |
+| cpuLimit     | string | number of cpu cores this node is limited to | `3` in private, `6` in public                                                                                         |
+| memory       | string | memory this node requires                   | `4Gi` in private, `8Gi` in public                                                                                     |
+| memoryLimit  | string | memory this node is limited to              | `8Gi` in private, `16Gi` in public                                                                                    |
+| storage      | string | disk space this node requires               | `100Gi` in private, `6Ti` in mainnet with full sync, `750Gi` in mainnet wit fast sync, `25Gi` in public test networks |
+| storageClass | string | Node volume storage class                   | Cluster's default storage class will be used as defined by cluster admin or cloud provider                            |
 
-memory and storage requests and limits must have use the pattern `^[1-9][0-9]*[KMGTPE]i$` for example `1500Mi`, `30Gi`, and `1Ti`.
+memory and storage requests and limits must use the pattern `^[1-9][0-9]*[KMGTPE]i$` for example `1500Mi`, `30Gi`, and `1Ti`.
 
-cpu requests and limits must have use the pattern `^[1-9][0-9]*m?$` for example `1000m` (which is equal to `1`), `1500m`, `2`, and `4.`
+cpu requests and limits must use the pattern `^[1-9][0-9]*m?$` for example `1000m` (which is equal to `1`), `1500m`, `2`, and `4.`
 
 `cpuLimit` can't be less than `cpu`.
 

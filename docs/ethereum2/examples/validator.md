@@ -20,7 +20,7 @@ spec:
 # highlight-end
 ```
 
-In the example above, we're deploying a validator client that uses ConsenSys Teku Ethereum 2.0 client `client: teku`, and syncing the main network beacon chain `join: mainnet`. We're connecting to beacon node endpoint using `beaconEndpoint: ...`. We set the graffiti text to include in propsed block `graffiti: validated by Kotal`. Loaded keystores using `keystores: ...`.
+In the example above, we're deploying a validator client that uses ConsenSys Teku Ethereum 2.0 client `client: teku`, and syncing the main network beacon chain `join: mainnet`. We're connecting to beacon node endpoint using `beaconEndpoint: ...`. We set the graffiti text to include in the propsed blocks `graffiti: validated by Kotal`. Loaded keystores using `keystores: ...`.
 
 :::caution
 In the example above, the keystore secret `my-validator` must exist before deploying the validator `teku-validator`, and it must contain two keys: `keystore` key hodling the BLS12-381 keystore JSON file, and `password` key holding the encryption key of the keystore.
@@ -39,8 +39,8 @@ Confirm that the validator client has been created by:
 ```sh
 $ kubectl get validators
 
-NAME               AGE
-teku-validator   1m
+NAME             CLIENT   NETWORK   AGE
+teku-validator   teku     mainnet   1m
 ```
 
 Get the pods created for the validator client:

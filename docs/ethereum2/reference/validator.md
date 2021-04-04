@@ -48,21 +48,21 @@ spec:
 
 ## wallet password secret
 
-`walletPasswordSecret` is the `prysm` wallet password kubernetes secret.
+`walletPasswordSecret` is `prysm` wallet password kubernetes secret.
 
 :::note
 `walletPasswordSecret` is supported only by `prysm` client.
 :::
 
 :::warning
-Wallet password secret must be deployed before debloying the validator.
+Wallet password secret must be deployed before deploying the validator.
 
 Wallet password secret must contain the password in key named `password`.
 
 ```bash
-# from password value
+# create k8s secret from password value
 kubectl create secret wallet-password --from-literal=password=<actual-password>
-# from password file
+# create k8s secret from password file
 kubectl create secret wallet-password --from-file=password=<password-file-path>
 ```
 
@@ -77,13 +77,17 @@ kubectl create secret wallet-password --from-file=password=<password-file-path>
 | secretName | string | kubernetes secret name holding `keystore` and `password` |
 | publicKey  | string | Validator public key in hexadecimal                      |
 
+:::note
+Validator keystore public key is required in case of `client: lighthouse`
+:::
+
 :::warning
 Keystore secret must be deployed before deploying the validator.
 
 Keystore secret must contain the BLS12-381 keystore JSON file in `keystore` key, and password in `password` key.
 
 ```bash
-# from keystore and password file
+# create k8s secret from keystore and password file
 kubectl create secret my-validator --from-file=keystore=<keystore-file-path> --from-file=password=<password-file-path>
 ```
 
@@ -103,9 +107,9 @@ kubectl create secret my-validator --from-file=keystore=<keystore-file-path> --f
 | memoryLimit | string | memory this node is limited to              | `16Gi`  |
 | storage     | string | disk space this node requires               | `200Gi` |
 
-memory and storage requests and limits must have use the pattern `^[1-9][0-9]*[KMGTPE]i$` for example `1500Mi`, `30Gi`, and `1Ti`.
+memory and storage requests and limits must use the pattern `^[1-9][0-9]*[KMGTPE]i$` for example `1500Mi`, `30Gi`, and `1Ti`.
 
-cpu requests and limits must have use the pattern `^[1-9][0-9]*m?$` for example `1000m` (which is equal to `1` core), `1500m` which is 1.5 core, `2` cores, and `4` cores.
+cpu requests and limits must use the pattern `^[1-9][0-9]*m?$` for example `1000m` (which is equal to `1` core), `1500m` which is 1.5 core, `2` cores, and `4` cores.
 
 `cpuLimit` can't be less than `cpu`.
 
