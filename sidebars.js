@@ -63,6 +63,7 @@ module.exports = {
         'ipfs/intro',
         {Examples: 
           [
+            'ipfs/examples/peer',
             'ipfs/examples/swarm'
           ]
         },
