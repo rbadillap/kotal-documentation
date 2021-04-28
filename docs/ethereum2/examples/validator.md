@@ -28,7 +28,7 @@ In the example above, the keystore secret `my-validator` must exist before deplo
 
 Deploy the above validator client manifest, and kotal will kick in and do everything for you:
 
-```sh
+```bash
 $ kubectl apply -f validator.yaml
 
 validator.ethereum2.kotal.io/teku-validator created
@@ -36,7 +36,7 @@ validator.ethereum2.kotal.io/teku-validator created
 
 Confirm that the validator client has been created by:
 
-```sh
+```bash
 $ kubectl get validators
 
 NAME             CLIENT   NETWORK   AGE
@@ -45,7 +45,7 @@ teku-validator   teku     mainnet   1m
 
 Get the pods created for the validator client:
 
-```sh
+```bash
 $ kubectl get pods
 
 NAME                 READY   STATUS    RESTARTS   AGE
@@ -54,13 +54,13 @@ teku-validator-0     1/1     Running   0          1m
 
 Get the logs of the running validator pod:
 
-```sh
+```bash
 $ kubectl logs -f teku-validator-0
 ```
 
 You'll get output similar to the following:
 
-```sh
+```bash
 ...
 21:21:30.668 INFO  - Storing validator data in: /opt/teku/kotal-data/validator
 21:21:30.751 INFO  - Loading 1 validator keys...
@@ -70,7 +70,7 @@ You'll get output similar to the following:
 
 Finally delete the validator client and kubernetes will delete all resources created for the validator client like pods, services ... etc:
 
-```sh
+```bash
 $ kubectl delete validator teku-validator
 
 validator.ethereum2.kotal.io "teku-validator" deleted

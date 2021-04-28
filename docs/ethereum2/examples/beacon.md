@@ -27,7 +27,7 @@ In the example above, we're deploying a beacon node that uses ConsenSys Teku Eth
 
 Deploy the above beacon node manifest, and kotal will kick in and do everything for you:
 
-```sh
+```bash
 $ kubectl apply -f beacon.yaml
 
 beaconnode.ethereum2.kotal.io/teku-beacon-node created
@@ -35,7 +35,7 @@ beaconnode.ethereum2.kotal.io/teku-beacon-node created
 
 Confirm that the beacon node has been created by:
 
-```sh
+```bash
 $ kubectl get beaconnodes
 
 NAME               CLIENT   JOIN      AGE
@@ -44,7 +44,7 @@ teku-beacon-node   teku     pyrmont   1m
 
 Get the pods created for the beacon node:
 
-```sh
+```bash
 $ kubectl get pods
 
 NAME                 READY   STATUS    RESTARTS   AGE
@@ -62,7 +62,7 @@ teku-beacon-node   ClusterIP   10.96.197.218   <none>        9000/UDP,9000/TCP,8
 
 Forward the localhost:8888 calls to the beacon node
 
-```sh
+```bash
 $ kubectl port-forward teku-beacon-node-0 8888
 
 Forwarding from 127.0.0.1:8888 -> 8888
@@ -70,7 +70,7 @@ Forwarding from 127.0.0.1:8888 -> 8888
 
 Send REST API call to get chain genesis details:
 
-```sh
+```bash
 curl localhost:8888/eth/v1/beacon/genesis
 ```
 
@@ -88,7 +88,7 @@ You'll get result similar to the following:
 
 Finally delete the beacon node and kubernetes will delete all resources created for the beacon node like pods, services ... etc:
 
-```sh
+```bash
 $ kubectl delete beaconnode teku-beacon-node
 
 beaconnode.ethereum2.kotal.io "teku-beacon-node" deleted
