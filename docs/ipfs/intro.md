@@ -2,22 +2,19 @@
 title: Introduction
 ---
 
-Kotal extended Kubernetes with `Swarm` custom resource in the `ipfs.kotal.io/v1alpha1` group version which can be used to create IPFS swarm of nodes simply be deploying a swarm description manifest.
+IPFS is a distributed system for storing and accessing files, websites, applications, and data.
 
-Kotal swarm controller is watching for any new swarm or updating existing swarms to do its magic.
-Here's an example of IPFS swarm of 1 node:
+Kotal extended Kubernetes with `Swarm`, `Peer` and `ClusterPeer` custom resources in `ipfs.kotal.io/v1alpha1` group version which can be used to deploy IPFS peers, swarms, and clusters simply by describing them, and kotal will take care of all the complexities like configuration management, resources management, service discovery ... etc.
+
+:::caution Deprecation Notice
+`Swarm` resource and controller will be removed in future versions. IPFS swarms can be created using `Peer` resource.
+:::
 
 ```yaml
 apiVersion: ipfs.kotal.io/v1alpha1
-kind: Swarm
+kind: Peer
 metadata:
-  name: sample-swarm
+  name: sample-peer
 spec:
-  nodes:
-    - name: node-1
-      id: "12D3KooWN16bUqeedKUQHXtHJjUT1oEyFBr6YnKQ7B4LSTAnbTye"
-      privateKey: "CAESQMbyIcsxBsn8kIk9sbL2NdVwSBf/Uj9BOA5KbXnrgmNHtQwF4rgzxd2XXpmdhIBxnlghaYVNBLzcRj2f6PCKnD0="
-      profiles:
-        - server
-        - flatfs
+  routing: dhtclient
 ```
