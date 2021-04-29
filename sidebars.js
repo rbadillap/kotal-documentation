@@ -70,6 +70,7 @@ module.exports = {
         {Reference: 
           [
             'ipfs/reference/peer',
+            'ipfs/reference/cluster-peer',
             'ipfs/reference/swarm',
             'ipfs/reference/node',
           ]
