@@ -4,6 +4,8 @@ title: Create IPFS Peer
 
 Using `Peer` resource, you can deploy ipfs peers which will join the public ipfs swarm by default.
 
+![ipfs peer](/img/ipfs-peer.png)
+
 ```yaml
 # peer.yaml
 # highlight-start
