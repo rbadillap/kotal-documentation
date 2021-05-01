@@ -2,6 +2,10 @@
 title: Create IPFS Swarm
 ---
 
+:::caution Deprecation Notice
+`Swarm` resource and controller will be removed in future versions. IPFS swarms can be created using `Peer` resource.
+:::
+
 IPFS Swarm of nodes are ipfs nodes that connect to each others but don't share the same pin set like [ipfs cluster](https://cluster.ipfs.io).
 
 ```yaml

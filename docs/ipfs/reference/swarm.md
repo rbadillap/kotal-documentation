@@ -2,6 +2,10 @@
 title: Swarm
 ---
 
+:::caution Deprecation Notice
+`Swarm` resource and controller will be removed in future versions. IPFS swarms can be created using `Peer` resource.
+:::
+
 Kotal extended Kubernetes with `Swarm` custom resource in the `ipfs.kotal.io/v1alpha1` group version.
 
 Swarm is a kubernetes object that has a similar structure to resources you're familiar with like pod and deployment.
@@ -15,9 +19,9 @@ spec: # swarm spec
 
 ## Swarm Spec
 
-| Syntax      | Type |  Description | Default |
-| ----------- |------| ----------- | ----- |
-| [nodes](#nodes) | array | Array of node objects | |
+| Syntax          | Type  | Description           | Default |
+| --------------- | ----- | --------------------- | ------- |
+| [nodes](#nodes) | array | Array of node objects |         |
 
 ## nodes
 
