@@ -2,6 +2,17 @@
 title: Peer
 ---
 
+```yaml
+apiVersion: ipfs.kotal.io/v1alpha1
+kind: Peer
+metadata:
+  Name: my-peer
+spec:
+  # your peer spec goes here
+```
+
+`Peer` resource spec parameters are summrized in the following table:
+
 | Syntax                            | Type   | Description                              | Default           |
 | --------------------------------- | ------ | ---------------------------------------- | ----------------- |
 | [initProfiles](#initprofiles)     | Array  | List of initial configuration profiles   | default-datastore |
