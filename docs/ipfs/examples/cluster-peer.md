@@ -236,12 +236,18 @@ As you can see cluster peer two is up and running as indicated by the healthy lo
 
 Cluster peer two has joined the first cluster peer as indicated by the highlighted log line `joined 12D...uiq's cluster`
 
-Finally, delete the cluster peer `cluster-peer`, and Kubernetes will delete all resources created for the cluster peer by kotal cluster peer controller like pods, services ... etc:
+Finally, delete all peers and cluster peers and Kubernetes will delete all Kubernetes resources created for them like pods, services ... etc:
 
 ```bash
-$ kubectl delete clusterpeers cluster-peer
+$ kubectl delete peers --all
+
+peers.ipfs.kotal.io "peer-sample" deleted
+peers.ipfs.kotal.io "peer-sample-two" deleted
+
+$ kubectl delete clusterpeers --all
 
 clusterpeers.ipfs.kotal.io "cluster-peer" deleted
+clusterpeers.ipfs.kotal.io "cluster-peer-two" deleted
 ```
 
 :fire:
