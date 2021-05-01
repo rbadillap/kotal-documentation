@@ -64,6 +64,7 @@ module.exports = {
         {Examples: 
           [
             'ipfs/examples/peer',
+            'ipfs/examples/cluster-peer',
             'ipfs/examples/swarm'
           ]
         },

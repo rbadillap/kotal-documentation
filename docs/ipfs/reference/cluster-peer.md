@@ -94,7 +94,7 @@ CAESQLepaunFGa/PI0oNS3plrbVSInqab/X/U1laEDe2V2cL/7kbF9H6x3xBiwpbVnYT/jDA8EhAznXA
 
 ```bash
 $ CLUSTER_SECRET=$(openssl rand -hex 32)
-$ kubectl create secret generic cluster-secret --from-literal=secret=$(CLUSTER_SECRET)
+$ kubectl create secret generic cluster-secret --from-literal=secret=$CLUSTER_SECRET
 ```
 
 ## resources

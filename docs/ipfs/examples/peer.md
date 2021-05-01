@@ -24,7 +24,7 @@ Let's deloy the above manifest.
 $ kubectl apply -f peer.yaml
 ```
 
-Kotal `Peer` controller will get a notification that a new `Peer` resource has been deployed, and will create all the Kubernetes resources (pod, service, configmap) necessary for it ti work as expected. You can verify peer resources has been created by fetching all peers:
+Kotal `Peer` controller will get a notification that a new `Peer` resource has been deployed, and will create all the Kubernetes resources (pod, service, configmap) necessary for it to work as expected. You can verify peer resources has been created by fetching all peers:
 
 ```bash
 $ kubectl get peers # kubectl get peers.ipfs.kotal.io
