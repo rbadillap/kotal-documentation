@@ -48,9 +48,9 @@ spec:
 `eth1Endpoints` is array of Ethereum 1 JSON RPC endpoints.
 
 :::info **Multiple Ethereum 1 JSON RPC Support**
-`prysm`, and `lighthouse` clients support multiple `eth1Endpoints`.
+`prysm`, `teku`, and `lighthouse` clients support multiple endpoints in `eth1Endpoints`.
 
-`teku`, and `nimbus` clients support only 1 `eth1Endpoints`.
+`nimbus` client supports only 1 endpoint in `eth1Endpoints`.
 :::
 
 ## rest
