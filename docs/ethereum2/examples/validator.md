@@ -13,14 +13,15 @@ metadata:
 spec:
   client: teku
   network: mainnet
-  beaconEndpoint: http://10.96.130.88:9999
+  beaconEndpoints:
+    - http://10.96.130.88:9999
   graffiti: Validated by Kotal
   keystores:
     - secretName: my-validator
 # highlight-end
 ```
 
-In the example above, we're deploying a validator client that uses ConsenSys Teku Ethereum 2.0 client `client: teku`, and syncing the main network beacon chain `join: mainnet`. We're connecting to beacon node endpoint using `beaconEndpoint: ...`. We set the graffiti text to include in the propsed blocks `graffiti: validated by Kotal`. Loaded keystores using `keystores: ...`.
+In the example above, we're deploying a validator client that uses ConsenSys Teku Ethereum 2.0 client `client: teku`, and syncing the main network beacon chain `join: mainnet`. We're connecting to beacon node endpoint using `beaconEndpoints: ...`. We set the graffiti text to include in the propsed blocks `graffiti: validated by Kotal`. Loaded keystores using `keystores: ...`.
 
 :::caution
 In the example above, the keystore secret `my-validator` must exist before deploying the validator `teku-validator`, and it must contain two keys: `keystore` key hodling the BLS12-381 keystore JSON file, and `password` key holding the encryption key of the keystore.

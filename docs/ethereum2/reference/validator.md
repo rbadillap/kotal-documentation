@@ -13,7 +13,8 @@ metadata:
 spec:
   network: mainnet
   client: prysm
-  beaconEndpoint: http://10.96.130.88:9999
+  beaconEndpoints:
+    - http://10.96.130.88:9999
   graffiti: Validated by Kotal
   walletPasswordSecret: wallet-password
   keystores:
@@ -24,7 +25,7 @@ spec:
 | ----------------------------------------------- | ------ | --------------------------------------- | ---------------- |
 | [network](#network)                             | string | Network to validate blocks for          |                  |
 | [client](#client)                               | string | Ethereum 2.0 client to use              | teku             |
-| [beaconEndpoint](#beacon-endpoint)              | string | Beacon node endpoint                    |                  |
+| [beaconEndpoints](#beacon-endpoints)            | array  | List of beacon node endpoints           |                  |
 | [graffiti](#graffiti)                           | string | Text to include in proposed blocks      | Powered by Kotal |
 | [walletPasswordSecret](#wallet-password-secret) | string | Wallet password kubernetes secret       |                  |
 | [keystores](#keystores)                         | array  | Validator keystores                     |                  |
@@ -38,9 +39,13 @@ spec:
 
 `client` is the Ethereum 2.0 client to use.
 
-## beacon endpoint
+## beacon endpoints
 
-`beaconEndpoint` is the beacon node endpoint.
+`beaconEndpoint` is a list of beacon node endpoints.
+
+:::note:::
+`lighthouse` is the only client that supports multiple endpoints. All other clients supports only a single endpoint.
+:::
 
 ## graffiti
 

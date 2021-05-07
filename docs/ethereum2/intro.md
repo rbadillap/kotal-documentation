@@ -56,7 +56,8 @@ metadata:
 spec:
   client: teku
   network: pyrmont
-  beaconEndpoint: http://10.96.130.88:9999
+  beaconEndpoints:
+    - http://10.96.130.88:9999
   graffiti: Validated by Kotal
   keystores:
     - secretName: my-validator
