@@ -13,16 +13,17 @@ spec:
 
 `Peer` resource spec parameters are summrized in the following table:
 
-| Syntax                            | Type   | Description                              | Default           |
-| --------------------------------- | ------ | ---------------------------------------- | ----------------- |
-| [initProfiles](#initprofiles)     | Array  | List of initial configuration profiles   | default-datastore |
-| [apiHost](#apihost)               | string | API server host                          | 0.0.0.0           |
-| [apiPort](#apiport)               | number | API server port                          | 5001              |
-| [gatewayHost](#gatewayhost)       | string | Local ipfs gateway host                  | 0.0.0.0           |
-| [gatewayPort](#gatewayport)       | number | Local ipfs gateway port                  | 8080              |
-| [routing](#routing)               | string | Content routing mechanism                | dht               |
-| [swarmKeySecret](#swarmkeysecret) | string | Name of the k8s secret holding swarm key |                   |
-| [resources](#resources)           | object | Compute and storage resources            |                   |
+| Syntax                            | Type   | Description                                                       | Default           |
+| --------------------------------- | ------ | ----------------------------------------------------------------- | ----------------- |
+| [initProfiles](#initprofiles)     | Array  | List of initial configuration profiles                            | default-datastore |
+| [profiles](#profiles)             | Array  | List of configuration profiles to apply after peer initialization |                   |
+| [apiHost](#apihost)               | string | API server host                                                   | 0.0.0.0           |
+| [apiPort](#apiport)               | number | API server port                                                   | 5001              |
+| [gatewayHost](#gatewayhost)       | string | Local ipfs gateway host                                           | 0.0.0.0           |
+| [gatewayPort](#gatewayport)       | number | Local ipfs gateway port                                           | 8080              |
+| [routing](#routing)               | string | Content routing mechanism                                         | dht               |
+| [swarmKeySecret](#swarmkeysecret) | string | Name of the k8s secret holding swarm key                          |                   |
+| [resources](#resources)           | object | Compute and storage resources                                     |                   |
 
 ## initProfiles
 
@@ -31,6 +32,12 @@ spec:
 `initialProfiles` available values are `server`, `randomports`, `default-datastore`, `local-discovery`, `test`, `default-networking`, `flatfs`, `badgerds`, and `lowpower`.
 
 `initProfiles` can't be updated (immutable).
+
+## profiles
+
+`profiles` is the list of configuration profiles to apply after peer initialization.
+
+`profiles` available values are `server`, `randomports`, `default-datastore`, `local-discovery`, `test`, `default-networking`, `flatfs`, `badgerds`, and `lowpower`.
 
 ## apiHost
 
