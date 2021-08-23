@@ -70,6 +70,7 @@ $ ipfs-key -type Ed25519 | base64
 | memory      | string | memory this node requires                   | `2Gi`  |
 | memoryLimit | string | memory this node is limited to              | `4Gi`  |
 | storage     | string | disk space this node requires               | `10Gi` |
+| storageClass | string | Node volume storage class                   | Cluster's default storage class will be used as defined by cluster admin or cloud provider |
 
 memory and storage requests and limits must use the pattern `^[1-9][0-9]*[KMGTPE]i$` for example `1500Mi`, `30Gi`, and `1Ti`.
 
@@ -78,3 +79,6 @@ cpu requests and limits must use the pattern `^[1-9][0-9]*m?$` for example `1000
 `cpuLimit` can't be less than `cpu`.
 
 `memoryLimit` can't be less than `memory`.
+
+`storageClass` field is immutable, it cannot be changed after creation.
+
